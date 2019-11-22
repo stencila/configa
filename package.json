@@ -1,0 +1,75 @@
+{
+  "name": "@stencila/configa",
+  "version": "0.0.1",
+  "description": "Unified application configuration.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "/dist"
+  ],
+  "scripts": {
+    "lint": "eslint 'index.ts' --fix",
+    "format": "npx prettier --write './**/*.{md,ts}'",
+    "test": "jest --runInBand",
+    "test:cover": "jest  --runInBand --collectCoverage",
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stencila/configa.git"
+  },
+  "keywords": [
+    "configuration"
+  ],
+  "author": "Stencila <hello@stenci.la>",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/stencila/configa/issues"
+  },
+  "homepage": "https://github.com/stencila/configa#readme",
+  "devDependencies": {
+    "@stencila/dev-config": "^1.2.3",
+    "@types/jest": "24.0.23",
+    "jest": "24.9.0",
+    "ts-jest": "24.1.0",
+    "ts-node": "^8.5.2",
+    "typescript": "3.7.2"
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ],
+    "rules": {
+      "scope-case": [
+        2,
+        "always",
+        "sentence-case"
+      ],
+      "subject-case": [
+        2,
+        "always",
+        "sentence-case"
+      ]
+    }
+  },
+  "eslintConfig": {
+    "extends": "@stencila/eslint-config"
+  },
+  "jest": {
+    "preset": "ts-jest",
+    "testEnvironment": "node",
+    "testMatch": [
+      "**/index.test.ts"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "prettier": "@stencila/dev-config/prettier-config.json",
+  "release": {
+    "extends": "@stencila/semantic-release-config"
+  }
+}
