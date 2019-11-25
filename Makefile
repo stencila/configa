@@ -18,3 +18,5 @@ cover:
 build:
 	npm run build
 
+docs:
+	npm run docs

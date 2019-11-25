@@ -9,11 +9,12 @@
   ],
   "scripts": {
     "lint": "eslint '**/*.ts' --fix",
-    "format": "npx prettier --write './**/*.{md,ts}'",
+    "format": "prettier --write './**/*.{md,ts}'",
     "test": "jest --runInBand",
     "test:watch": "jest --watch",
     "test:cover": "jest  --runInBand --collectCoverage",
-    "build": "tsc"
+    "build": "tsc",
+    "docs": "ts-node cli readme"
   },
   "repository": {
     "type": "git",
