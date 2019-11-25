@@ -8,9 +8,10 @@
     "/dist"
   ],
   "scripts": {
-    "lint": "eslint 'index.ts' --fix",
+    "lint": "eslint '**/*.ts' --fix",
     "format": "npx prettier --write './**/*.{md,ts}'",
     "test": "jest --runInBand",
+    "test:watch": "jest --watch",
     "test:cover": "jest  --runInBand --collectCoverage",
     "build": "tsc"
   },
@@ -30,7 +31,9 @@
   "devDependencies": {
     "@stencila/dev-config": "^1.2.3",
     "@types/jest": "24.0.23",
+    "@types/rc": "^1.1.0",
     "jest": "24.9.0",
+    "jest-file-snapshot": "^0.3.8",
     "ts-jest": "24.1.0",
     "ts-node": "^8.5.2",
     "typescript": "3.7.2"
@@ -53,7 +56,12 @@
     }
   },
   "eslintConfig": {
-    "extends": "@stencila/eslint-config"
+    "extends": "@stencila/eslint-config",
+    "env": {
+      "es6": true,
+      "node": true,
+      "jest": true
+    }
   },
   "jest": {
     "preset": "ts-jest",
@@ -71,5 +79,10 @@
   "prettier": "@stencila/dev-config/prettier-config.json",
   "release": {
     "extends": "@stencila/semantic-release-config"
+  },
+  "dependencies": {
+    "@gerrit0/typedoc": "^0.15.10",
+    "@stencila/logga": "^2.0.0",
+    "rc": "^1.2.8"
   }
 }

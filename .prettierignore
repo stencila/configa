@@ -1,3 +1,7 @@
-/CHANGELOG.md
-/coverage
-/dist
+CHANGELOG.md
+coverage
+dist
+docs
+fixtures
+node_modules
+snapshots
