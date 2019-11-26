@@ -72,11 +72,10 @@ describe('parseConfig', () => {
     })
 
   test('config-simple-errors.ts', async () => {
-    const events = logMessages(7)
+    const events = logMessages(6)
     expect(parseConfig(fixture('config-simple-errors.ts')))
     expect(await events).toEqual([
       'Option is missing description: ConfigSimpleErrors.optionA',
-      'Option has no default value: ConfigSimpleErrors.optionB',
       "Option has type 'any': ConfigSimpleErrors.optionC",
       "Option has type 'any': ConfigSimpleErrors.optionD",
       'Option has no default value: ConfigSimpleErrors.optionD',

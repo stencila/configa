@@ -89,9 +89,6 @@ export function parseConfig(filePath: string): Option[] {
         log.warn(
           `Default values for options of type object can not be handled: ${id}`
         )
-      } else {
-        defaultValue = undefined
-        log.error(`Option has no default value: ${id}`)
       }
     } else {
       try {
@@ -273,7 +270,7 @@ export function insertMdIntoFile(
  */
 export function updateReadme(config: Config): void {
   let { appName, configPath, readmePath } = config
-  if (appName === null) {
+  if (appName === undefined) {
     const pkg = JSON.parse(fs.readFileSync('package.json', 'utf8'))
     const match = pkg.name.match(/(@\w+\/)?(\w+)$/)
     if (match === null) {

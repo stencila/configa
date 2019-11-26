@@ -8,11 +8,6 @@ export class ConfigSimpleErrors {
   optionA = ''
 
   /**
-   * No default
-   */
-  optionB: number
-
-  /**
    * Any type (explicit)
    */
   optionC: any = 0

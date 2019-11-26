@@ -10,10 +10,10 @@ export class Config {
    *
    * Determines the expected prefix on the names of
    * config files and environment variables.
-   * If `null` then parse the name from the
+   * If `undefined` then parse the name from the
    * package name in `./package.json`.
    */
-  appName: string | null = null
+  appName?: string
 
   /**
    * Path to the configuration file to be parsed.

@@ -15,6 +15,6 @@ export interface Option {
   description: string
   details?: string
   type: string
-  defaultValue: boolean | number | string | [] | {}
+  defaultValue?: boolean | number | string | [] | {}
   validators?: Validator[]
 }
