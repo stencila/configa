@@ -1,0 +1,29 @@
+{
+  // A `string` option
+  // type: string
+  "optionA": "optionADefault",
+
+  // A `number` option
+  // type: number
+  "optionB": 42,
+
+  // A `boolean` option
+  // type: boolean
+  "optionC": false,
+
+  // An `array` option
+  // type: string[]
+  "optionD": [
+    "a",
+    "b"
+  ],
+
+  // Multiline description as a
+  // brief summary
+  // type: string
+  "optionE": "",
+
+  // Option with a inline enum
+  // type: "fig" | "foo" | "frog"
+  "optionF": "fig"
+}

@@ -13,11 +13,11 @@ All configuration options can be set, in descending order of priority, by:
 <!-- CONFIGA-USAGE-END -->
 
 <!-- CONFIGA-TABLE-BEGIN -->
-| Name       | Description                                                             | Type         | Default       |
-| ---------- | ----------------------------------------------------------------------- | ------------ | ------------- |
-| appName    | The name of the application.<a href="#appName-details"><sup>1</sup></a> | string, null | `null`        |
-| configPath | Path to the configuration file to be parsed.                            | string       | `"config.ts"` |
-| readmePath | Path to the README file to be updated.                                  | string       | `"README.md"` |
+| Name       | Description                                                             | Type           | Default       |
+| ---------- | ----------------------------------------------------------------------- | -------------- | ------------- |
+| appName    | The name of the application.<a href="#appName-details"><sup>1</sup></a> | string \| null | `null`        |
+| configPath | Path to the configuration file to be parsed.                            | string         | `"config.ts"` |
+| readmePath | Path to the README file to be updated.                                  | string         | `"README.md"` |
 
 
 1. <a id="appName-details"></a>Determines the expected prefix on the names of

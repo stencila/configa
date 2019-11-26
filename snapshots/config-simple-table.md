@@ -1,18 +1,4 @@
-# A test README
 
-## Usage
-
-<!-- CONFIGA-USAGE-BEGIN -->
-All configuration options can be set, in descending order of priority, by:
-
-- a command line argument e.g. `--<value> <value>`
-- an environment variable prefixed with `TEST_` e.g. `TEST_<option>=<value>`
-- a `.json` or `.ini` configuration file, set using the `--config` option, or `.testrc` by default
-<!-- CONFIGA-USAGE-END -->
-
-## Options
-
-<!-- CONFIGA-TABLE-BEGIN -->
 | Name    | Description                                                                         | Type                    | Default            |
 | ------- | ----------------------------------------------------------------------------------- | ----------------------- | ------------------ |
 | optionA | A `string` option                                                                   | string                  | `"optionADefault"` |
@@ -28,4 +14,3 @@ the option which can be Markdown also
   - item 1
   - item 2
 
-<!-- CONFIGA-TABLE-END -->

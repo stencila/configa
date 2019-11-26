@@ -3,23 +3,13 @@
  */
 
 import * as typedoc from '@gerrit0/typedoc'
-import { getLogger } from '@stencila/logga'
 import fs from 'fs'
+import json5 from 'json5'
 import rc from 'rc'
 import { Config } from './config'
-
-const log = getLogger('configa')
-
-/**
- * A configuration option.
- */
-export interface Option {
-  name: string
-  description: string
-  details?: string
-  type: string
-  defaultValue: boolean | number | string | [] | {}
-}
+import { log } from './log'
+import { Option } from './types'
+import { decoratorToValidator, validateDefault } from './validate'
 
 /**
  * Parse a Typescript configuration file.
@@ -30,70 +20,106 @@ export interface Option {
 export function parseConfig(filePath: string): Option[] {
   const app = new typedoc.Application({
     module: 'commonjs',
-    target: 'es2017'
+    target: 'es2017',
+    esModuleInterop: true,
+    experimentalDecorators: true
   })
 
-  const file = app.convert([filePath])
-  if (file === undefined) return []
+  const files = app.convert([filePath])
+  if (files === undefined || files.children === undefined) return []
+
+  // Get the declaration object for the file
+  const file = files.children.filter(decl => decl.originalName === filePath)[0]
+  if (file.children === undefined) return []
 
   // Get the first class defined in the file
-  const clas = Object.values(file.reflections).filter(
-    clas => clas.kindString === 'Class'
+  const clas = Object.values(file.children).filter(
+    decl => decl.kindString === 'Class'
   )[0]
+  if (clas.children === undefined) return []
 
-  // Sort by position within the class
-  // @ts-ignore that children is not a property
+  // Sort properties by declaration order within the class
   const props = clas.children.sort((a, b) =>
-    a.sources[0].line > b.sources[0].line ? 1 : -1
+    a.sources !== undefined && b.sources !== undefined
+      ? a.sources[0].line > b.sources[0].line
+        ? 1
+        : -1
+      : 0
   )
 
   // Convert properties into `Options` for easier processing
   // and generate error messages where needed
+  const parent = clas.name
   return props.map((prop: typedoc.DeclarationReflection) => {
-    const { name, comment, type: typeObj, defaultValue: defaultString } = prop
+    const {
+      name,
+      comment,
+      type: typeObj,
+      defaultValue: defaultString,
+      decorators = []
+    } = prop
+    const id = `${parent}.${name}`
 
     let description
     let details
     if (comment === undefined) {
       description = ''
-      log.error(`Option is missing description: ${clas.name}.${name}`)
+      log.error(`Option is missing description: ${id}`)
     } else {
       description = comment.shortText.trim()
       if (description.length > 100)
-        log.warn(`Option has long description: ${clas.name}.${name}`)
+        log.warn(`Option has long description: ${id}`)
       details = comment.text.trim().length > 0 ? comment.text.trim() : undefined
     }
 
     let type
     if (typeObj === undefined || typeObj.toString() === 'any') {
-      type = ''
-      log.error(`Option has type 'any': ${clas.name}.${name}`)
+      type = 'any'
+      log.error(`Option has type 'any': ${id}`)
     } else {
-      type = typeObj.toString().replace(/\s*\|\s*/, ', ')
+      type = typeObj.toString()
+      // Normalize type name for arrays to suffix `[]` form
+      type = type.replace(/Array<([^>]+)>/, '$1[]')
     }
 
     let defaultValue
     if (defaultString === undefined) {
-      defaultValue = ''
-      log.error(`Option has no default value: ${clas.name}.${name}`)
+      if (type === 'object') {
+        defaultValue = {}
+        log.warn(
+          `Default values for options of type object can not be handled: ${id}`
+        )
+      } else {
+        defaultValue = undefined
+        log.error(`Option has no default value: ${id}`)
+      }
     } else {
       try {
-        defaultValue = JSON.parse(defaultString)
+        defaultValue = json5.parse(defaultString)
       } catch (error) {
         defaultValue = ''
         log.error(
-          `Option has un-JSON-parsable default value: ${clas.name}.${name}`
+          `Option default value can not be parsed: ${id}: ${error.message}`
         )
       }
     }
 
-    return {
+    const option: Option = {
+      parent,
       name,
       description,
       details,
       type,
       defaultValue
     }
+
+    option.validators = decorators.map(decorator =>
+      decoratorToValidator(option, decorator)
+    )
+
+    validateDefault(option)
+
+    return option
   })
 }
 
@@ -109,27 +135,6 @@ export function generateCliHelp(options: Option[]): string {
       return `--${name} ${description} ${type} ${defaultValue}`
     })
     .join('\n')}`
-}
-
-/**
- * Generate a JSON object, with description comments
- * and default values. Useful for creating a sample
- * JSON configuration file.
- *
- * @param options The options to generate the JSON for
- */
-export function generateJson(options: Option[]): string {
-  return `{
-${options
-  .map(option => {
-    const { description, name, defaultValue } = option
-    return `  // ${description.replace(
-      '\n',
-      '\n  // '
-    )}\n  "${name}": ${defaultValue}`
-  })
-  .join(',\n\n')}
-}`
 }
 
 /**
@@ -171,9 +176,7 @@ export function generateMdTable(options: Option[], addDetails = true): string {
           : ''),
       type,
       `\`${JSON.stringify(defaultValue)}\``
-    ].map((value): string =>
-      value.replace(/\s+/gm, ' ').replace(/\s*\|\s*/, ', ')
-    )
+    ].map((value): string => value.replace(/\s+/gm, ' ').replace(/\|/, '\\|'))
   })
 
   // Get maximum width of content in each column

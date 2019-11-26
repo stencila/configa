@@ -3,7 +3,7 @@
 
 const constant = 'a-value'
 
-export class ConfigErrors {
+export class ConfigSimpleErrors {
   // No description
   optionA = ''
 

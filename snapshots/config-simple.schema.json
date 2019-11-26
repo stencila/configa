@@ -1,0 +1,37 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "optionA": {
+      "description": "A `string` option",
+      "type": "string"
+    },
+    "optionB": {
+      "description": "A `number` option",
+      "type": "number"
+    },
+    "optionC": {
+      "description": "A `boolean` option",
+      "type": "boolean"
+    },
+    "optionD": {
+      "description": "An `array` option",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "optionE": {
+      "description": "Multiline description as a\nbrief summary",
+      "type": "string"
+    },
+    "optionF": {
+      "description": "Option with a inline enum",
+      "enum": [
+        "fig",
+        "foo",
+        "frog"
+      ]
+    }
+  }
+}

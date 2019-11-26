@@ -8,11 +8,28 @@
  * ```
  */
 
-import { addHandler, removeHandler } from '@stencila/logga';
-import fs from 'fs';
-import { toMatchFile } from 'jest-file-snapshot';
-import path from 'path';
-import { generateCliHelp, generateJson, generateMdTable, insertMd, parseConfig, wrap, updateReadme } from '.';
+import { addHandler, removeHandler, defaultHandler } from '@stencila/logga'
+import fs from 'fs'
+import { toMatchFile } from 'jest-file-snapshot'
+import path from 'path'
+import {
+  generateCliHelp,
+  generateMdTable,
+  insertMd,
+  parseConfig,
+  wrap,
+  updateReadme
+} from '.'
+import { generateJsonSample } from './samples'
+
+/**
+ * Import and instantiate Typescript fixture configs,
+ * just to test that decorators etc can be
+ * compiled and run and are included in coverage.
+ */
+import { ConfigSimple } from './fixtures/config-simple'
+import { ConfigValidators } from './fixtures/config-validators'
+import { generateJsonSchema } from './validate'
 
 // Get the path to a fixture file
 const fixture = (name: string): string => path.join(__dirname, 'fixtures', name)
@@ -24,11 +41,21 @@ expect.extend({ toMatchFile })
 const snapshot = (name: string): string =>
   path.join(__dirname, 'snapshots', name)
 
-// Parse the test configs for use across below tests
-const configOne = parseConfig(fixture('config-one.ts'))
+/* eslint-disable @typescript-eslint/no-unused-vars */
+const configSimpleDefaults = new ConfigSimple()
+const configValidatorsDefaults = new ConfigValidators()
+/* eslint-enable @typescript-eslint/no-unused-vars */
 
-test('parseConfig', async () => {
-  // Collect a certain number of log events
+// Parse the test configs for use across below tests
+const configSimple = parseConfig(fixture('config-simple.ts'))
+const configValidators = parseConfig(fixture('config-validators.ts'))
+
+describe('parseConfig', () => {
+  // Remove the default log handler to reduce noise
+  // so that real errors are more noticable
+  removeHandler(defaultHandler)
+
+  // Function to collect a certain number of log events
   const logMessages = (num: number): Promise<string[]> =>
     new Promise(resolve => {
       const logMessages: string[] = []
@@ -44,30 +71,68 @@ test('parseConfig', async () => {
       )
     })
 
-  const events = logMessages(7)
-  expect(parseConfig(fixture('config-errors.ts')))
-  expect(await events).toEqual([
-    'Option is missing description: ConfigErrors.optionA',
-    'Option has no default value: ConfigErrors.optionB',
-    "Option has type 'any': ConfigErrors.optionC",
-    "Option has type 'any': ConfigErrors.optionD",
-    'Option has no default value: ConfigErrors.optionD',
-    'Option has un-JSON-parsable default value: ConfigErrors.optionE',
-    'Option has long description: ConfigErrors.optionF'
-  ])
+  test('config-simple-errors.ts', async () => {
+    const events = logMessages(7)
+    expect(parseConfig(fixture('config-simple-errors.ts')))
+    expect(await events).toEqual([
+      'Option is missing description: ConfigSimpleErrors.optionA',
+      'Option has no default value: ConfigSimpleErrors.optionB',
+      "Option has type 'any': ConfigSimpleErrors.optionC",
+      "Option has type 'any': ConfigSimpleErrors.optionD",
+      'Option has no default value: ConfigSimpleErrors.optionD',
+      "Option default value can not be parsed: ConfigSimpleErrors.optionE: JSON5: invalid character 'c' at 1:2",
+      'Option has long description: ConfigSimpleErrors.optionF'
+    ])
+  })
+
+  test('config-validator-errors.ts', async () => {
+    const events = logMessages(7)
+    expect(parseConfig(fixture('config-validators-errors.ts')))
+    expect(await events).toEqual([
+      'Option validator "enumeration" has no argument: ConfigValidatorErrors.optionA',
+      "Error compiling JSON Schema for option: ConfigValidatorErrors.optionB: schema is invalid: data.properties['optionB'].multipleOf should be number",
+      'Option validator "minimum" does not apply to option of type "string": ConfigValidatorErrors.optionC',
+      'Option validator "maximum" does not apply to option of type "string": ConfigValidatorErrors.optionC',
+      'Option validator "pattern" does not apply to option of type "string[]": ConfigValidatorErrors.optionD',
+      'Option validator "maxProperties" does not apply to option of type "string[]": ConfigValidatorErrors.optionD',
+      'Option has default value that is not valid against its validators: ConfigValidatorErrors.optionE'
+    ])
+  })
+
+  // Reinstate default handler
+  addHandler(defaultHandler)
+})
+
+test('generateJsonSchema', () => {
+  expect(generateJsonSchema(configSimple)).toMatchFile(
+    snapshot('config-simple.schema.json')
+  )
+  expect(generateJsonSchema(configValidators)).toMatchFile(
+    snapshot('config-validators.schema.json')
+  )
+})
+
+test('generateJsonSample', () => {
+  expect(generateJsonSample(configSimple)).toMatchFile(
+    snapshot('config-simple.json')
+  )
+  expect(generateJsonSample(configValidators)).toMatchFile(
+    snapshot('config-validators.json')
+  )
 })
 
 test('generateCliHelp', () => {
-  expect(generateCliHelp(configOne)).toMatchFile(snapshot('config-one.txt'))
-})
-
-test('generateJson', () => {
-  expect(generateJson(configOne)).toMatchFile(snapshot('config-one.json'))
+  expect(generateCliHelp(configSimple)).toMatchFile(
+    snapshot('config-simple.txt')
+  )
 })
 
 test('generateMdTable', () => {
-  expect(generateMdTable(configOne)).toMatchFile(
-    snapshot('config-one-table.md')
+  expect(generateMdTable(configSimple)).toMatchFile(
+    snapshot('config-simple-table.md')
+  )
+  expect(generateMdTable(configValidators)).toMatchFile(
+    snapshot('config-validators-table.md')
   )
 })
 
@@ -86,16 +151,14 @@ test('insertMd', () => {
 })
 
 test('updateReadme', () => {
-  fs.copyFileSync(fixture('README.md'), snapshot('README-actual.md'))
+  fs.copyFileSync(fixture('README.md'), fixture('README-actual.md'))
   updateReadme({
     appName: 'test',
-    configPath: fixture('config-one.ts'),
+    configPath: fixture('config-simple.ts'),
     readmePath: fixture('README-actual.md')
   })
-  const md =  fs.readFileSync(snapshot('README-actual.md'), 'utf8')
-  expect(md).toMatchFile(
-    snapshot('README-expected.md')
-  )
+  const md = fs.readFileSync(fixture('README-actual.md'), 'utf8')
+  expect(md).toMatchFile(snapshot('README-expected.md'))
 })
 
 test('wrap', () => {

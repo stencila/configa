@@ -1,7 +1,7 @@
 --optionA A `string` option string optionADefault
 --optionB A `number` option number 42
 --optionC A `boolean` option boolean false
---optionD An `enum` option EnumOne 
+--optionD An `array` option string[] a,b
 --optionE Multiline description as a
 brief summary string 
---optionF Option with a inline enum "fig", "foo" | "frog" fig
+--optionF Option with a inline enum "fig" | "foo" | "frog" fig

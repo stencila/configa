@@ -1,0 +1,131 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "optionA": {
+      "description": "Option with `enum` decorator",
+      "type": "string",
+      "enum": [
+        "a",
+        "b",
+        "c"
+      ]
+    },
+    "optionC": {
+      "description": "Option with `multipleOf` decorator",
+      "type": "number",
+      "multipleOf": 2
+    },
+    "optionD": {
+      "description": "Option with `maximum` decorator",
+      "type": "number",
+      "maximum": 10
+    },
+    "optionE": {
+      "description": "Option with `exclusiveMaximum` decorator",
+      "type": "number",
+      "exclusiveMaximum": 10
+    },
+    "optionF": {
+      "description": "Option with `minimum` decorator",
+      "type": "number",
+      "minimum": 10
+    },
+    "optionG": {
+      "description": "Option with `exclusiveMinimum` decorator",
+      "type": "number",
+      "exclusiveMinimum": 10
+    },
+    "optionH": {
+      "description": "Option with `maxLength` decorator",
+      "type": "string",
+      "maxLength": 3
+    },
+    "optionI": {
+      "description": "Option with `minLength` decorator",
+      "type": "string",
+      "minLength": 3
+    },
+    "optionJ": {
+      "description": "Option with `pattern` decorator",
+      "type": "string",
+      "pattern": "/https?://w+/"
+    },
+    "optionK": {
+      "description": "Option with `maxItems` decorator",
+      "type": "array",
+      "items": {
+        "type": "number"
+      },
+      "maxItems": 2
+    },
+    "optionL": {
+      "description": "Option with `minItems` decorator",
+      "type": "array",
+      "items": {
+        "type": "number"
+      },
+      "minItems": 1
+    },
+    "optionM": {
+      "description": "Option with `uniqueItems` decorator",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "optionN": {
+      "description": "Option with `maxContains` decorator",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "contains": {
+        "enum": [
+          "a"
+        ]
+      },
+      "maxContains": 2
+    },
+    "optionO": {
+      "description": "Option with `minContains` decorator",
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "contains": {
+        "enum": [
+          "a"
+        ]
+      },
+      "minContains": 1
+    },
+    "optionP": {
+      "description": "Option with `maxProperties` decorator",
+      "type": "object",
+      "maxProperties": 2
+    },
+    "optionQ": {
+      "description": "Option with `minProperties` decorator",
+      "type": "object",
+      "minProperties": 1
+    },
+    "optionR": {
+      "description": "Option with `required` decorator",
+      "type": "object",
+      "required": [
+        "a"
+      ]
+    },
+    "optionS": {
+      "description": "Option with `dependentRequired` decorator",
+      "type": "object",
+      "dependentRequired": {
+        "a": [
+          "b"
+        ]
+      }
+    }
+  }
+}

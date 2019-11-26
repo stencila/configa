@@ -1,9 +1,9 @@
-enum EnumOne {
-  first = 1,
-  second = 2
-}
+/**
+ * Fairly simple fixture for testing
+ * basic parsing and generation
+ */
 
-export class ConfigOne {
+export class ConfigSimple {
   /**
    * A `string` option
    */
@@ -20,9 +20,9 @@ export class ConfigOne {
   optionC = false
 
   /**
-   * An `enum` option
+   * An `array` option
    */
-  optionD: EnumOne = EnumOne.first
+  optionD: string[] = ['a', 'b']
 
   /**
    * Multiline description as a
@@ -39,4 +39,5 @@ export class ConfigOne {
    * Option with a inline enum
    */
   optionF: 'fig' | 'foo' | 'frog' = 'fig'
+
 }

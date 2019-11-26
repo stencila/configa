@@ -1,4 +1,5 @@
-/node_modules
+.DS_Store
 /coverage
 /dist
-.DS_Store
+/fixtures/README-actual.md
+/node_modules

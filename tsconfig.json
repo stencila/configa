@@ -1,5 +1,8 @@
 {
   "extends": "@stencila/dev-config/tsconfig.json",
+  "compilerOptions": {
+    "experimentalDecorators": true
+  },
   "files": ["index.ts", "cli.ts"],
   "include": ["**/*.ts"]
 }

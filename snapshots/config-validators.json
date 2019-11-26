@@ -1,0 +1,84 @@
+{
+  // Option with `enum` decorator
+  // type: string
+  "optionA": "a",
+
+  // Option with `multipleOf` decorator
+  // type: number
+  "optionC": 4,
+
+  // Option with `maximum` decorator
+  // type: number
+  "optionD": 10,
+
+  // Option with `exclusiveMaximum` decorator
+  // type: number
+  "optionE": 9,
+
+  // Option with `minimum` decorator
+  // type: number
+  "optionF": -10,
+
+  // Option with `exclusiveMinimum` decorator
+  // type: number
+  "optionG": -9,
+
+  // Option with `maxLength` decorator
+  // type: string
+  "optionH": "foo",
+
+  // Option with `minLength` decorator
+  // type: string
+  "optionI": "bar",
+
+  // Option with `pattern` decorator
+  // type: string
+  "optionJ": "http://example.com",
+
+  // Option with `maxItems` decorator
+  // type: number[]
+  "optionK": [
+    1,
+    2
+  ],
+
+  // Option with `minItems` decorator
+  // type: number[]
+  "optionL": [
+    1
+  ],
+
+  // Option with `uniqueItems` decorator
+  // type: string[]
+  "optionM": [],
+
+  // Option with `maxContains` decorator
+  // type: string[]
+  "optionN": [
+    "a",
+    "b",
+    "a"
+  ],
+
+  // Option with `minContains` decorator
+  // type: string[]
+  "optionO": [
+    "a"
+  ],
+
+  // Option with `maxProperties` decorator
+  // type: object
+  "optionP": {},
+
+  // Option with `minProperties` decorator
+  // type: object
+  "optionQ": {},
+
+  // Option with `required` decorator
+  // type: object
+  "optionR": {},
+
+  // Option with `dependentRequired` decorator
+  // type: object
+  "optionS": {}
+}
