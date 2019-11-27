@@ -22,7 +22,7 @@ import {
   minProperties,
   required,
   dependentRequired,
-} from '../validate'
+} from '../define'
 
 export class ConfigValidators {
 

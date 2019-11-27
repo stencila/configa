@@ -1,11 +1,11 @@
 /**
- * @module samples
+ * @module develop-samples
  *
- * A module that defines functions for generating sample configuration
- * files in alternatives formats.
+ * Module for generation of sample configuration files
+ * during development of a package using Configa.
  */
 
-import { Option } from './types'
+import { Option } from './common'
 
 /**
  * Generate a sample configuration in JSON with description comments

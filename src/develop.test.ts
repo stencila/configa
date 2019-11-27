@@ -13,14 +13,13 @@ import fs from 'fs'
 import { toMatchFile } from 'jest-file-snapshot'
 import path from 'path'
 import {
-  generateCliHelp,
   generateMdTable,
   insertMd,
   parseConfig,
-  wrap,
-  updateReadme
-} from '.'
-import { generateJsonSample } from './samples'
+  updateReadme,
+  generateJsonSample,
+  generateJsonSchema
+} from './develop'
 
 /**
  * Import and instantiate Typescript fixture configs,
@@ -29,7 +28,6 @@ import { generateJsonSample } from './samples'
  */
 import { ConfigSimple } from './fixtures/config-simple'
 import { ConfigValidators } from './fixtures/config-validators'
-import { generateJsonSchema } from './validate'
 
 // Get the path to a fixture file
 const fixture = (name: string): string => path.join(__dirname, 'fixtures', name)
@@ -72,13 +70,12 @@ describe('parseConfig', () => {
     })
 
   test('config-simple-errors.ts', async () => {
-    const events = logMessages(6)
+    const events = logMessages(5)
     expect(parseConfig(fixture('config-simple-errors.ts')))
     expect(await events).toEqual([
       'Option is missing description: ConfigSimpleErrors.optionA',
       "Option has type 'any': ConfigSimpleErrors.optionC",
       "Option has type 'any': ConfigSimpleErrors.optionD",
-      'Option has no default value: ConfigSimpleErrors.optionD',
       "Option default value can not be parsed: ConfigSimpleErrors.optionE: JSON5: invalid character 'c' at 1:2",
       'Option has long description: ConfigSimpleErrors.optionF'
     ])
@@ -120,12 +117,6 @@ test('generateJsonSample', () => {
   )
 })
 
-test('generateCliHelp', () => {
-  expect(generateCliHelp(configSimple)).toMatchFile(
-    snapshot('config-simple.txt')
-  )
-})
-
 test('generateMdTable', () => {
   expect(generateMdTable(configSimple)).toMatchFile(
     snapshot('config-simple-table.md')
@@ -158,10 +149,4 @@ test('updateReadme', () => {
   })
   const md = fs.readFileSync(fixture('README-actual.md'), 'utf8')
   expect(md).toMatchFile(snapshot('README-expected.md'))
-})
-
-test('wrap', () => {
-  expect(wrap('a')).toBe('a')
-  expect(wrap('a'.repeat(90))).toBe('a'.repeat(90))
-  expect(wrap('foo bar baz', 4)).toBe('foo\nbar\nbaz')
 })

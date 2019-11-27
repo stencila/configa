@@ -1,7 +1,7 @@
 {
   "name": "@stencila/configa",
-  "version": "0.0.1",
-  "description": "Unified application configuration.",
+  "version": "0.1.0",
+  "description": "Application configuration: DRY, flexible and type-safe",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
@@ -10,9 +10,9 @@
   "scripts": {
     "lint": "eslint '**/*.ts' --fix",
     "format": "prettier --write './**/*.{md,ts}'",
-    "test": "jest --runInBand",
+    "test": "jest",
     "test:watch": "jest --watch",
-    "test:cover": "jest  --runInBand --collectCoverage",
+    "test:cover": "jest --collectCoverage",
     "build": "tsc",
     "docs": "npm run docs:readme && npm run docs:api",
     "docs:readme": "ts-node src/cli readme",

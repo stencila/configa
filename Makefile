@@ -20,3 +20,4 @@ build:
 
 docs:
 	npm run docs
+.PHONY: docs

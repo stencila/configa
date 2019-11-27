@@ -1,9 +1,12 @@
 #!/usr/bin/env node
 
 import { Config } from '../config'
-import { collect, updateReadme } from '.'
+import { collectOptions, updateReadme } from '.'
 
-const { args: commands = ['readme'], config } = collect('configa', new Config())
+const { args: commands = ['readme'], config } = collectOptions(
+  'configa',
+  new Config()
+)
 
 for (const command of commands) {
   switch (command) {

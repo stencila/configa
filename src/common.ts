@@ -1,9 +1,16 @@
 /**
- * @module types
+ * @module common
  *
- * Module for type definitions used in
- * in several other modules.
+ * Module for type definitions etc used in
+ * in other modules.
  */
+
+import { getLogger } from '@stencila/logga'
+
+/**
+ * A log instance.
+ */
+export const log = getLogger('configa')
 
 /**
  * A JSON Schema validator.
