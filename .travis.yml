@@ -1,16 +1,28 @@
 language: node_js
-node_js: '10'
+node_js:
+  - '10'
+  - '12'
 
 script:
-  - npm run lint
-  - npm run test:cover
-  - npm run build
+  - make lint
+  - make cover
+  - make build
+  - make docs
 
 after_success:
   # Upload test coverage to codecov.io
   - bash <(curl -s https://codecov.io/bash)
 
 deploy:
+  # Deploy documentation to Github Pages (only on Linux)
+  # See https://docs.travis-ci.com/user/deployment/pages/
+  - provider: pages
+    skip-cleanup: true
+    github-token: $GITHUB_TOKEN
+    local-dir: docs
+    on:
+      branch: master
+
   # Do a semantic release
   - provider: script
     skip_cleanup: true
