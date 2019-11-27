@@ -5,17 +5,17 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
-    "/dist"
+    "dist"
   ],
   "scripts": {
-    "lint": "eslint '**/*.ts' --fix",
-    "format": "prettier --write './**/*.{md,ts}'",
+    "lint": "eslint 'src/**/*.ts' --fix",
+    "format": "prettier --write '**/*.{md,ts}'",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:cover": "jest --collectCoverage",
-    "build": "tsc",
+    "build": "tsc --project tsconfig.prod.json",
     "docs": "npm run docs:readme && npm run docs:api",
-    "docs:readme": "ts-node src/cli readme",
+    "docs:readme": "ts-node src/cli readme --configPath=src/config.ts",
     "docs:api": "typedoc --options typedoc.js ./src"
   },
   "repository": {
