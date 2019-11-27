@@ -18,6 +18,6 @@ export function collectOptions<ConfigType extends object>(
 ): { args?: string[]; config: ConfigType } {
   const { _, ...options } = rc(appName)
   const args = _.length > 0 ? _ : undefined
-  const config = { ...(options as ConfigType), ...defaults }
+  const config = { ...defaults, ...(options as ConfigType) }
   return { args, config }
 }

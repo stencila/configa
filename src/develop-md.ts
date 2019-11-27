@@ -7,7 +7,7 @@
 
 import fs from 'fs'
 import { log, Option } from './common'
-import { Config } from '../config'
+import { Config } from './config'
 import { parseConfig } from './develop-parse'
 
 /**

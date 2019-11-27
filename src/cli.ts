@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import { Config } from '../config'
+import { Config } from './config'
 import { collectOptions, updateReadme } from '.'
 
 const { args: commands = ['readme'], config } = collectOptions(
