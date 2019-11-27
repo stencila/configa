@@ -19,8 +19,8 @@ deploy:
   # Deploy documentation to Github Pages (only on Linux)
   # See https://docs.travis-ci.com/user/deployment/pages/
   - provider: pages
-    cleanup: false
     token: $GITHUB_TOKEN
+    skip_cleanup: true
     local_dir: docs
     on:
       branch: master
@@ -28,7 +28,7 @@ deploy:
 
   # Do a semantic release
   - provider: script
-    cleanup: false
+    skip_cleanup: true
     script: npx semantic-release
     on:
       branch: master
