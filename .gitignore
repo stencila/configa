@@ -1,5 +1,6 @@
 .DS_Store
 /coverage
 /dist
+/docs
 /fixtures/README-actual.md
 /node_modules

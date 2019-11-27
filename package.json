@@ -14,7 +14,9 @@
     "test:watch": "jest --watch",
     "test:cover": "jest  --runInBand --collectCoverage",
     "build": "tsc",
-    "docs": "ts-node cli readme"
+    "docs": "npm run docs:readme && npm run docs:api",
+    "docs:readme": "ts-node src/cli readme",
+    "docs:api": "typedoc --options typedoc.js ./src"
   },
   "repository": {
     "type": "git",
