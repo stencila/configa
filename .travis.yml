@@ -24,6 +24,7 @@ deploy:
     local_dir: docs
     on:
       branch: master
+      condition: $TRAVIS_OS_NAME = linux && $TRAVIS_NODE_VERSION = '12'
 
   # Do a semantic release
   - provider: script
@@ -31,3 +32,4 @@ deploy:
     script: npx semantic-release
     on:
       branch: master
+      condition: $TRAVIS_OS_NAME = linux && $TRAVIS_NODE_VERSION = '12'
