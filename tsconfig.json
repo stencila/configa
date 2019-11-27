@@ -3,6 +3,6 @@
   "compilerOptions": {
     "experimentalDecorators": true
   },
-  "files": ["index.ts", "cli.ts"],
-  "include": ["**/*.ts"]
+  "files": ["src/index.ts", "src/cli.ts"],
+  "include": ["config.ts", "src/**/*.ts"]
 }

@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import { Config } from './config'
+import { Config } from '../config'
 import { collect, updateReadme } from '.'
 
 const { args: commands = ['readme'], config } = collect('configa', new Config())

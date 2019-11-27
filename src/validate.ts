@@ -1,14 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-
-import { Decorator } from '@gerrit0/typedoc'
-import Ajv from 'ajv'
-import { JSONSchema7Definition, JSONSchema7 } from 'json-schema'
-import json5 from 'json5'
-import { log } from './log'
-import { Option, Validator } from './types'
-
-const ajv = new Ajv()
-
 /**
  * @module validators
  *
@@ -22,6 +11,17 @@ const ajv = new Ajv()
  * - `type`, since that is implicit in the Typescript definition of a option
  * - `const`, since having a constant option is sorta pointless
  */
+
+/* eslint-disable @typescript-eslint/no-unused-vars */
+
+import { Decorator } from '@gerrit0/typedoc'
+import Ajv from 'ajv'
+import { JSONSchema7Definition, JSONSchema7 } from 'json-schema'
+import json5 from 'json5'
+import { log } from './log'
+import { Option, Validator } from './types'
+
+const ajv = new Ajv()
 
 // These validation decorators are purely declarative and used in static analysis
 // of configuration options. They all return the `propertyDecorator` function
@@ -277,7 +277,7 @@ export const decoratorToValidator = (
   decorator: Decorator
 ): Validator => {
   const { parent, name, type } = option
-  const { name: keyword, arguments: args } = decorator
+  const { name: decoratorName, arguments: decoratorArgs } = decorator
   const id = `${parent}.${name}`
 
   const logWrongType = (): void =>
@@ -285,7 +285,8 @@ export const decoratorToValidator = (
       `Option validator "${keyword}" does not apply to option of type "${type}": ${id}`
     )
 
-  let arg = Object.values(args)[0] as string
+  const keyword = decoratorName as Validator['keyword']
+  let arg = Object.values(decoratorArgs)[0] as string
   switch (keyword) {
     /* eslint-disable no-fallthrough */
 
@@ -360,10 +361,15 @@ export const decoratorToValidator = (
   }
 }
 
+/**
+ * Convert a validator to a JSON Schema object.
+ *
+ * @param validator The `Validator` to convert
+ */
 export const validatorToJsonSchema = (validator: Validator): JSONSchema7 => {
-  let { keyword, value } = validator
-  if (keyword === 'enumeration') keyword = 'enum'
-  return { [keyword]: value }
+  const { keyword, value } = validator
+  const prop = keyword === 'enumeration' ? 'enum' : keyword
+  return { [prop]: value }
 }
 
 /**
