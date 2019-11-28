@@ -32,15 +32,15 @@
   },
   "homepage": "https://github.com/stencila/configa#readme",
   "devDependencies": {
-    "@stencila/dev-config": "^1.2.3",
+    "@stencila/dev-config": "1.2.3",
     "@types/jest": "24.0.23",
     "@types/json5": "0.0.30",
-    "@types/rc": "^1.1.0",
+    "@types/rc": "1.1.0",
     "jest": "24.9.0",
-    "jest-file-snapshot": "^0.3.8",
-    "json-schema": "^0.2.5",
+    "jest-file-snapshot": "0.3.8",
+    "json-schema": "0.2.5",
     "ts-jest": "24.2.0",
-    "ts-node": "^8.5.2",
+    "ts-node": "8.5.2",
     "typescript": "3.7.2"
   },
   "commitlint": {
