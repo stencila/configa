@@ -17,8 +17,12 @@ export class Config {
 
   /**
    * Path to the configuration file to be parsed.
+   *
+   * If `undefined`, then will search for a file
+   * `config.ts` in the current directory and its
+   * subdirectories.
    */
-  configPath = 'config.ts'
+  configPath?: string
 
   /**
    * Path to the README file to be updated.

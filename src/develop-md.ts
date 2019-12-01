@@ -6,6 +6,7 @@
  */
 
 import fs from 'fs'
+import globby from 'globby'
 import { log, Option } from './common'
 import { Config } from './config'
 import { parseConfig } from './develop-parse'
@@ -155,10 +156,20 @@ export function updateReadme(config: Config): void {
     }
     appName = match[2] as string
   }
-  if (!fs.existsSync(configPath)) {
+
+  if (configPath == undefined) {
+    const configs = globby.sync('**/(C|c)onfig.ts')[0]
+    if (configs.length == 0) {
+      log.error(`No config file supplied and none could be found`)
+      return
+    } else {
+      configPath = configs[0]
+    }
+  } else if (!fs.existsSync(configPath)) {
     log.error(`Config file does not exist: ${configPath}`)
     return
   }
+
   if (!fs.existsSync(readmePath)) {
     log.error(`README file does not exist: ${readmePath}`)
     return

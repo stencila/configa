@@ -17,7 +17,7 @@
     "cli": "ts-node src/cli",
     "build": "tsc --project tsconfig.prod.json",
     "docs": "npm run docs:readme && npm run docs:api",
-    "docs:readme": "npm run cli -- readme --configPath=src/config.ts",
+    "docs:readme": "npm run cli -- readme",
     "docs:api": "typedoc --options typedoc.js ./src"
   },
   "repository": {
@@ -94,6 +94,7 @@
     "@gerrit0/typedoc": "^0.15.10",
     "@stencila/logga": "^2.0.0",
     "ajv": "^6.10.2",
+    "globby": "^10.0.1",
     "json5": "^2.1.1",
     "rc": "^1.2.8"
   }
