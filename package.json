@@ -76,8 +76,9 @@
     "testMatch": [
       "**/*.test.ts"
     ],
-    "coveragePathIgnorePatterns": [
-      "fixtures/"
+    "collectCoverageFrom": [
+      "src/**/*.ts",
+      "!src/fixtures/*.ts"
     ]
   },
   "husky": {
