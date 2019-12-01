@@ -157,9 +157,9 @@ export function updateReadme(config: Config): void {
     appName = match[2] as string
   }
 
-  if (configPath == undefined) {
-    const configs = globby.sync('**/(C|c)onfig.ts')[0]
-    if (configs.length == 0) {
+  if (configPath === undefined) {
+    const configs = globby.sync('**/(C|c)onfig.ts')
+    if (configs.length === 0) {
       log.error(`No config file supplied and none could be found`)
       return
     } else {
