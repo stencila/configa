@@ -24,6 +24,6 @@
   "optionE": "",
 
   // Option with a inline enum
-  // type: "fig" | "foo" | "frog"
+  // type: string
   "optionF": "fig"
 }

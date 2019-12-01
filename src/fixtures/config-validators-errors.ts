@@ -37,7 +37,7 @@ export class ConfigValidatorErrors {
   /**
    * Validation does not apply to option type (array)
    */
-  @pattern(/a regexp/)
+  @minimum(0)
   @maxProperties(1)
   optionD: Array<string> = ['a', 'b']
 

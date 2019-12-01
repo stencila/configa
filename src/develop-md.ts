@@ -35,20 +35,35 @@ All configuration options can be set, in descending order of priority, by:
  * @param addDetails Should option details be added after the table?
  */
 export function generateMdTable(options: Option[], addDetails = true): string {
-  const header = ['Name', 'Description', 'Type', 'Default']
+  const header = ['Name', 'Description', 'Type', 'Validators', 'Default']
 
   // Generate the rows of data with escaping to prevent
   // multi-lines and pipes
   let detailsCount = 0
   const rows = options.map(option => {
-    const { name, description, details, type, defaultValue } = option
+    const {
+      name,
+      description,
+      details,
+      types,
+      validators,
+      defaultValue
+    } = option
+    const typesCell = `\`${types.join(' | ')}\``
+    const validatorsCell =
+      validators === undefined
+        ? ''
+        : validators
+            .map(({ keyword, value }) => `${keyword}: \`${value}\``)
+            .join(',<br>')
     return [
       name,
       description +
         (addDetails && details !== undefined
           ? `<a href="#${name}-details"><sup>${++detailsCount}</sup></a>`
           : ''),
-      type,
+      typesCell,
+      validatorsCell,
       `\`${JSON.stringify(defaultValue)}\``
     ].map((value): string => value.replace(/\s+/gm, ' ').replace(/\|/, '\\|'))
   })

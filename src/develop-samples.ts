@@ -17,13 +17,15 @@ export function generateJsonSample(options: Option[]): string {
   return `{
 ${options
   .map(option => {
-    const { description, name, type, defaultValue } = option
+    const { description, name, types, defaultValue = null } = option
     const desc = description.replace('\n', '\n  // ')
     const value = JSON.stringify(defaultValue, null, '  ').replace(
       /\n/gm,
       '\n  '
     )
-    return `  // ${desc}\n  // type: ${type}\n  "${name}": ${value}`
+    return `  // ${desc}\n  // type: ${types.join(
+      ' | '
+    )}\n  "${name}": ${value}`
   })
   .join(',\n\n')}
 }`

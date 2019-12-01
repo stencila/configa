@@ -50,7 +50,7 @@ const configValidators = parseConfig(fixture('config-validators.ts'))
 
 describe('parseConfig', () => {
   // Remove the default log handler to reduce noise
-  // so that real errors are more noticable
+  // so that real errors are more noticeable
   removeHandler(defaultHandler)
 
   // Function to collect a certain number of log events
@@ -89,9 +89,9 @@ describe('parseConfig', () => {
       "Error compiling JSON Schema for option: ConfigValidatorErrors.optionB: schema is invalid: data.properties['optionB'].multipleOf should be number",
       'Option validator "minimum" does not apply to option of type "string": ConfigValidatorErrors.optionC',
       'Option validator "maximum" does not apply to option of type "string": ConfigValidatorErrors.optionC',
-      'Option validator "pattern" does not apply to option of type "string[]": ConfigValidatorErrors.optionD',
+      'Option validator "minimum" does not apply to option of type "string[]": ConfigValidatorErrors.optionD',
       'Option validator "maxProperties" does not apply to option of type "string[]": ConfigValidatorErrors.optionD',
-      'Option has default value that is not valid against its validators: ConfigValidatorErrors.optionE'
+      'Option has default value that is not valid against its validators: ConfigValidatorErrors.optionE: should NOT have more than 4 items'
     ])
   })
 

@@ -49,7 +49,7 @@
     "optionJ": {
       "description": "Option with `pattern` decorator",
       "type": "string",
-      "pattern": "/https?://w+/"
+      "pattern": "/^https?://.+/"
     },
     "optionK": {
       "description": "Option with `maxItems` decorator",

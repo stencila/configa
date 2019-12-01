@@ -8,7 +8,8 @@
 import * as typedoc from '@gerrit0/typedoc'
 import json5 from 'json5'
 import { log, Option, Validator } from './common'
-import { validateDefault } from './develop-schema'
+import { validateDefault, validatorToJsonSchema } from './develop-schema'
+import { type } from 'os'
 
 /**
  * Parse a Typescript configuration file.
@@ -71,20 +72,46 @@ export function parseConfig(filePath: string): Option[] {
       details = comment.text.trim().length > 0 ? comment.text.trim() : undefined
     }
 
-    let type
-    if (typeObj === undefined || typeObj.toString() === 'any') {
-      type = 'any'
-      log.error(`Option has type 'any': ${id}`)
-    } else {
-      type = typeObj.toString()
-      // Normalize type name for arrays to suffix `[]` form
-      type = type.replace(/Array<([^>]+)>/, '$1[]')
-    }
+    const [types, enumeration] = (typeObj === undefined
+      ? 'any'
+      : typeObj.toString()
+    )
+      .split(/\s*\|\s*/)
+      .reduce(
+        ([types, values], type: string) => {
+          let value
+
+          if (type === 'any') {
+            log.error(`Option has type 'any': ${id}`)
+          } else if (type.includes(`Array<`)) {
+            // Normalize array types to use [] suffix
+            type = type.replace(/Array<([^>]+)>/, '$1[]')
+          } else if (
+            !(['null', 'boolean', 'number', 'string', 'object'].includes(type) ||
+            /^[a-z]+\[\]$/.test(type))
+          ) {
+            // Unhandled type, so assume to be an enumeration type
+            // and parse value
+            try {
+              value = json5.parse(type)
+              type = typeof value
+            } catch (error) {
+              log.error(`Unable to parse value in enumeration type: ${type}`)
+            }
+          }
+
+          return [
+            types.includes(type) ? types : [...types, type],
+            value === undefined ? values : [...values, value]
+          ]
+        },
+        [[] as string[], [] as any[]]
+      )
 
     let defaultValue
     if (defaultString === undefined) {
-      if (type === 'object') {
-        defaultValue = {}
+      if (types.includes('object')) {
+        defaultValue = undefined
         log.warn(
           `Default values for options of type object can not be handled: ${id}`
         )
@@ -105,13 +132,20 @@ export function parseConfig(filePath: string): Option[] {
       name,
       description,
       details,
-      type,
+      types,
       defaultValue
     }
 
-    option.validators = decorators.map(decorator =>
+    let validators = decorators.map(decorator =>
       parseDecorator(option, decorator)
     )
+    if (enumeration.length > 0) {
+      validators = [
+        ...validators,
+        { keyword: 'enumeration', value: enumeration }
+      ]
+    }
+    option.validators = validators
 
     validateDefault(option)
 
@@ -132,13 +166,15 @@ export const parseDecorator = (
   option: Option,
   decorator: typedoc.Decorator
 ): Validator => {
-  const { parent, name, type } = option
+  const { parent, name, types } = option
   const { name: decoratorName, arguments: decoratorArgs } = decorator
   const id = `${parent}.${name}`
 
   const logWrongType = (): void =>
     log.error(
-      `Option validator "${keyword}" does not apply to option of type "${type}": ${id}`
+      `Option validator "${keyword}" does not apply to option of type "${types.join(
+        ' | '
+      )}": ${id}`
     )
 
   const keyword = decoratorName as Validator['keyword']
@@ -156,7 +192,7 @@ export const parseDecorator = (
     case 'exclusiveMaximum':
     case 'minimum':
     case 'exclusiveMinimum':
-      if (type !== 'number') logWrongType()
+      if (!types.includes('number')) logWrongType()
       break
 
     // Keywords for strings
@@ -165,7 +201,7 @@ export const parseDecorator = (
       arg = `"${arg}"`
     case 'maxLength':
     case 'minLength':
-      if (type !== 'string') logWrongType()
+      if (!types.includes('string')) logWrongType()
       break
 
     // Keywords for arrays
@@ -177,8 +213,7 @@ export const parseDecorator = (
     case 'contains':
     case 'maxContains':
     case 'minContains':
-      if (!(type === 'array' || type.includes('Array<') || type.includes('[]')))
-        logWrongType()
+      if (!types.some(type => type.includes('[]'))) logWrongType()
       break
 
     // Keywords for objects
@@ -186,7 +221,7 @@ export const parseDecorator = (
     case 'minProperties':
     case 'required':
     case 'dependentRequired':
-      if (type !== 'object') logWrongType()
+      if (!types.includes('object')) logWrongType()
       break
 
     /* eslint-enable no-fallthrough */

@@ -15,8 +15,8 @@ import { Option } from './common'
 export function generateCliHelp(options: Option[]): string {
   return `${options
     .map(option => {
-      const { name, description, type, defaultValue } = option
-      return `--${name} ${description} ${type} ${defaultValue}`
+      const { name, description, types, defaultValue } = option
+      return `--${name} ${description} ${types} ${defaultValue}`
     })
     .join('\n')}`
 }

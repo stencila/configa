@@ -75,9 +75,12 @@ export interface Option {
   details?: string
 
   /**
-   * The Typescript type signature of the option.
+   * Valid types for the option.
+   *
+   * Typescript type names can be used e.g `boolean`,
+   * `string`, `string[]`.
    */
-  type: string
+  types: string[]
 
   /**
    * The default value for the option.

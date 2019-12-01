@@ -17,11 +17,11 @@
 
   // Option with `minimum` decorator
   // type: number
-  "optionF": -10,
+  "optionF": 10,
 
   // Option with `exclusiveMinimum` decorator
   // type: number
-  "optionG": -9,
+  "optionG": 11,
 
   // Option with `maxLength` decorator
   // type: string
@@ -68,17 +68,17 @@
 
   // Option with `maxProperties` decorator
   // type: object
-  "optionP": {},
+  "optionP": null,
 
   // Option with `minProperties` decorator
   // type: object
-  "optionQ": {},
+  "optionQ": null,
 
   // Option with `required` decorator
   // type: object
-  "optionR": {},
+  "optionR": null,
 
   // Option with `dependentRequired` decorator
   // type: object
-  "optionS": {}
+  "optionS": null
 }

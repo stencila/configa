@@ -58,13 +58,13 @@ export class ConfigValidators {
    * Option with `minimum` decorator
    */
   @minimum(10)
-  optionF = -10
+  optionF = 10
 
   /**
    * Option with `exclusiveMinimum` decorator
    */
   @exclusiveMinimum(10)
-  optionG = -9
+  optionG = 11
 
 
   // Keywords for strings
@@ -84,7 +84,7 @@ export class ConfigValidators {
   /**
    * Option with `pattern` decorator
    */
-  @pattern(/https?:\/\/\w+/)
+  @pattern(/^https?:\/\/.+/)
   optionJ = 'http://example.com'
 
 

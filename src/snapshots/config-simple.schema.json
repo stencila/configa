@@ -27,6 +27,7 @@
     },
     "optionF": {
       "description": "Option with a inline enum",
+      "type": "string",
       "enum": [
         "fig",
         "foo",
