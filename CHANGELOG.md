@@ -1,3 +1,10 @@
+## [0.2.1](https://github.com/stencila/configa/compare/v0.2.0...v0.2.1) (2019-12-02)
+
+
+### Bug Fixes
+
+* **Markdown:** Fix escaping of pipes ([9a1fcfc](https://github.com/stencila/configa/commit/9a1fcfcb8577c9798de087bafdadd2d76fc2ceea))
+
 # [0.2.0](https://github.com/stencila/configa/compare/v0.1.1...v0.2.0) (2019-12-02)
 
 
