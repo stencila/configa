@@ -4,7 +4,7 @@ import fs from 'fs'
 import globby from 'globby'
 import {
   collectOptions,
-  helpListOptions,
+  helpUsage,
   parseConfig,
   updateJsonSchema,
   updateReadme
@@ -12,7 +12,7 @@ import {
 import { log } from './common'
 import { Config } from './config'
 import configSchema from './config.schema.json'
-import { helpUsage } from './run-help'
+
 ;(() => {
   const { args = ['readme', 'schema'], config } = collectOptions<Config>(
     'configa',
