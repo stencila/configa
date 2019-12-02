@@ -1,3 +1,21 @@
+# [0.2.0](https://github.com/stencila/configa/compare/v0.1.1...v0.2.0) (2019-12-02)
+
+
+### Bug Fixes
+
+* **Config:** Fix bug involved in finding config file ([8993ff7](https://github.com/stencila/configa/commit/8993ff74218a9e19b48c6e8be7c818472b59dbaf))
+* **Dependencies:** Pin; update Logga ([b2bcac7](https://github.com/stencila/configa/commit/b2bcac794b481e04b437a5290e0fceaffd9e0160))
+* **Package:** Add bin entry to package.json ([bbf2193](https://github.com/stencila/configa/commit/bbf2193e86b927e948bc68f243969ccb8c09742b))
+* **Validators:** Emit pattern value properly ([1eb3756](https://github.com/stencila/configa/commit/1eb3756b9861b2abe1dbe4af1a758297b5fc3009))
+
+
+### Features
+
+* **CLI Help:** Improve generation of CLI usage ([99df7fe](https://github.com/stencila/configa/commit/99df7fead10ec3f50269babcc5fb14e805d647a3))
+* **Config:** Search for config file by default ([32a793d](https://github.com/stencila/configa/commit/32a793df579b785c2e38722e218f574fe36c74f8))
+* **Run time:** Validate against schema when collecting options ([1eb772a](https://github.com/stencila/configa/commit/1eb772a992fea4def2947e01fa8ecb9019e4d56e))
+* **Types:** Improve handling of union types and their validation ([8f4583f](https://github.com/stencila/configa/commit/8f4583f80ce08d79bed2985992381e7a21e83779))
+
 ## [0.1.1](https://github.com/stencila/configa/compare/v0.1.0...v0.1.1) (2019-11-27)
 
 
