@@ -18,8 +18,10 @@ const ajv = new Ajv()
  * @param validator The `Validator` to convert
  */
 export const validatorToJsonSchema = (validator: Validator): JSONSchema7 => {
-  const { keyword, value } = validator
-  const prop = keyword === 'enumeration' ? 'enum' : keyword
+  let { keyword, value } = validator
+  let prop: string= keyword
+  if (keyword === 'enumeration') prop = 'enum'
+  if (keyword == 'pattern' && typeof value == 'string') value = value.slice(1, -1)
   return { [prop]: value }
 }
 
@@ -195,7 +197,7 @@ export const validateDefault = (option: Option): void => {
   try {
     validate = ajv.compile(schema)
   } catch (error) {
-    log.warn(`Error compiling JSON Schema for option: ${id}: ${error.message}`)
+    log.error(`Error compiling JSON Schema for option: ${id}: ${error.message}`)
   }
   if (validate !== undefined && validate({ [name]: defaultValue }) !== true) {
     let { errors = [] } = validate

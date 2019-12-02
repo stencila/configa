@@ -59,7 +59,7 @@
     "optionJ": {
       "description": "Option with `pattern` decorator",
       "type": "string",
-      "pattern": "/^https?://.+/",
+      "pattern": "^https?://.+",
       "default": "http://example.com"
     },
     "optionK": {

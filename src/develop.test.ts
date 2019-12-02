@@ -8,9 +8,10 @@
  * ```
  */
 
-import { addHandler, removeHandler, defaultHandler } from '@stencila/logga'
+import { defaultHandler, replaceHandlers } from '@stencila/logga'
 import { toMatchFile } from 'jest-file-snapshot'
 import path from 'path'
+import { Application } from './common'
 import {
   generateMdTable,
   insertMd,
@@ -26,7 +27,11 @@ import {
  */
 import { ConfigSimple } from './fixtures/config-simple'
 import { ConfigValidators } from './fixtures/config-validators'
-import { Application } from './common'
+
+/* eslint-disable @typescript-eslint/no-unused-vars */
+const configSimpleDefaults = new ConfigSimple()
+const configValidatorsDefaults = new ConfigValidators()
+/* eslint-enable @typescript-eslint/no-unused-vars */
 
 // Get the path to a fixture file
 const fixture = (name: string): string => path.join(__dirname, 'fixtures', name)
@@ -38,11 +43,6 @@ expect.extend({ toMatchFile })
 const snapshot = (name: string): string =>
   path.join(__dirname, 'snapshots', name)
 
-/* eslint-disable @typescript-eslint/no-unused-vars */
-const configSimpleDefaults = new ConfigSimple()
-const configValidatorsDefaults = new ConfigValidators()
-/* eslint-enable @typescript-eslint/no-unused-vars */
-
 // Parse the test configs for use across below tests
 const configSimple = parseConfig(fixture('config-simple.ts')) as Application
 const configValidators = parseConfig(
@@ -50,23 +50,21 @@ const configValidators = parseConfig(
 ) as Application
 
 describe('parseConfig', () => {
-  // Remove the default log handler to reduce noise
-  // so that real errors are more noticeable
-  removeHandler(defaultHandler)
-
   // Function to collect a certain number of log events
   const logMessages = (num: number): Promise<string[]> =>
     new Promise(resolve => {
       const logMessages: string[] = []
-      const handler = addHandler(
+      replaceHandlers(
         logData => {
-          logMessages.push(logData.message)
-          if (logMessages.length >= num) {
-            removeHandler(handler)
-            resolve(logMessages)
+          const {tag, message} = logData
+          if (tag === 'configa') {
+            logMessages.push(message)
+            if (logMessages.length >= num) {
+              replaceHandlers(defaultHandler)
+              resolve(logMessages)
+            }
           }
-        },
-        { tags: ['configa'] }
+        }
       )
     })
 
@@ -95,9 +93,6 @@ describe('parseConfig', () => {
       'Option has default value that is not valid against its validators: ConfigValidatorErrors.optionE: should NOT have more than 4 items'
     ])
   })
-
-  // Reinstate default handler
-  addHandler(defaultHandler)
 })
 
 test('generateJsonSchema', () => {
