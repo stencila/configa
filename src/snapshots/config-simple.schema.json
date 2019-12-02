@@ -45,6 +45,19 @@
         "frog"
       ],
       "default": "fig"
+    },
+    "optionG": {
+      "description": "Option with pipe chars | everyone",
+      "$comment": "To test that Markdown table generation works.",
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "number"
+        }
+      ],
+      "default": "x |y |z"
     }
   }
 }

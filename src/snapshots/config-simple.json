@@ -25,5 +25,9 @@
 
   // Option with a inline enum
   // type: string
-  "optionF": "fig"
+  "optionF": "fig",
+
+  // Option with pipe chars | everyone
+  // type: string | number
+  "optionG": "x |y |z"
 }

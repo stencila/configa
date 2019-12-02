@@ -2,7 +2,6 @@
  * Fairly simple fixture for testing
  * basic parsing and generation
  */
-
 export class ConfigSimple {
   /**
    * A `string` option
@@ -39,5 +38,12 @@ export class ConfigSimple {
    * Option with a inline enum
    */
   optionF: 'fig' | 'foo' | 'frog' = 'fig'
+
+  /**
+   * Option with pipe chars | everyone
+   *
+   * To test that Markdown table generation works.
+   */
+  optionG: string | number = 'x |y \\|z'
 
 }
