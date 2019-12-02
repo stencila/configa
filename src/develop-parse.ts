@@ -87,8 +87,11 @@ export function parseConfig(filePath: string): Option[] {
             // Normalize array types to use [] suffix
             type = type.replace(/Array<([^>]+)>/, '$1[]')
           } else if (
-            !(['null', 'boolean', 'number', 'string', 'object'].includes(type) ||
-            /^[a-z]+\[\]$/.test(type))
+            !(
+              ['null', 'boolean', 'number', 'string', 'object'].includes(
+                type
+              ) || /^[a-z]+\[\]$/.test(type)
+            )
           ) {
             // Unhandled type, so assume to be an enumeration type
             // and parse value

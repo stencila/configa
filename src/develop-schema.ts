@@ -6,10 +6,9 @@
  */
 
 import Ajv from 'ajv'
-import { JSONSchema7, JSONSchema7Definition } from 'json-schema'
-import json5 from 'json5'
+import fs from 'fs'
+import { JSONSchema7 } from 'json-schema'
 import { log, Option, Validator } from './common'
-import { types } from '@babel/core'
 
 const ajv = new Ajv()
 
@@ -56,7 +55,9 @@ export const validatorsForType = (
   const keywords = keywordsMap[type]
   if (keywords === undefined) return keywords
   return validators
-    .filter(({ keyword }) => keywords.includes(keyword) || keyword === 'enumeration')
+    .filter(
+      ({ keyword }) => keywords.includes(keyword) || keyword === 'enumeration'
+    )
     .reduce((prev, validator) => {
       return { ...prev, ...validatorToJsonSchema(validator) }
     }, {})
@@ -105,15 +106,24 @@ export const typeToJsonSchema = (
  */
 export const generateJsonSchemaDefinition = (
   options: Option[]
-): JSONSchema7Definition => {
+): JSONSchema7 => {
   // @ts-ignore
   const properties = options.reduce(
     (properties: { [key: string]: JSONSchema7 }, option: Option) => {
-      const { name, description, types, validators = [] } = option
+      const {
+        name,
+        description,
+        details,
+        types,
+        validators = [],
+        defaultValue
+      } = option
       const subschemas = types.map(type => typeToJsonSchema(type, validators))
       const property = {
         description,
-        ...(subschemas.length === 1 ? subschemas[0] : { anyOf: subschemas })
+        ...(details === undefined ? {} : { $comment: details }),
+        ...(subschemas.length === 1 ? subschemas[0] : { anyOf: subschemas }),
+        ...(defaultValue === undefined ? {} : { default: defaultValue })
       }
       return property !== undefined
         ? { ...properties, ...{ [name]: property } }
@@ -137,6 +147,14 @@ export const generateJsonSchema = (options: Option[]): string =>
   JSON.stringify(generateJsonSchemaDefinition(options), null, '  ')
 
 /**
+ * Generate a JSON Schema document for a set of options.
+ *
+ * @param option The option to generate the schema for
+ */
+export const updateJsonSchema = (filePath: string, options: Option[]): void =>
+  fs.writeFileSync(filePath, generateJsonSchema(options))
+
+/**
  * Check that the default value for an option is valid
  * against any validators it may have.
  *
@@ -157,7 +175,9 @@ export const validateDefault = (option: Option): void => {
     let { errors = [] } = validate
     if (errors === null) errors = []
     log.error(
-      `Option has default value that is not valid against its validators: ${id}: ${errors.map(error => error.message).join(', ')}`
+      `Option has default value that is not valid against its validators: ${id}: ${errors
+        .map(error => error.message)
+        .join(', ')}`
     )
   }
 }

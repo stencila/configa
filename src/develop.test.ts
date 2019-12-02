@@ -9,14 +9,12 @@
  */
 
 import { addHandler, removeHandler, defaultHandler } from '@stencila/logga'
-import fs from 'fs'
 import { toMatchFile } from 'jest-file-snapshot'
 import path from 'path'
 import {
   generateMdTable,
   insertMd,
   parseConfig,
-  updateReadme,
   generateJsonSample,
   generateJsonSchema
 } from './develop'
@@ -138,15 +136,4 @@ test('insertMd', () => {
   ).toBe(
     `<!-- CONFIGA-HERE-BEGIN -->Markdown to be inserted<!-- CONFIGA-HERE-END -->`
   )
-})
-
-test('updateReadme', () => {
-  fs.copyFileSync(fixture('README.md'), fixture('README-actual.md'))
-  updateReadme({
-    appName: 'test',
-    configPath: fixture('config-simple.ts'),
-    readmePath: fixture('README-actual.md')
-  })
-  const md = fs.readFileSync(fixture('README-actual.md'), 'utf8')
-  expect(md).toMatchFile(snapshot('README-expected.md'))
 })

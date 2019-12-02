@@ -25,6 +25,15 @@ export class Config {
   configPath?: string
 
   /**
+   * Path to the JSON Schema file to be generated.
+   *
+   * If `undefined`, then will be the path of the
+   * config file with extension `.json.schema` instead of
+   * `.ts`.
+   */
+  jsonSchemaPath?: string
+
+  /**
    * Path to the README file to be updated.
    */
   readmePath = 'README.md'

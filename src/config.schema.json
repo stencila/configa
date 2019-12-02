@@ -1,0 +1,26 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "appName": {
+      "description": "The name of the application.",
+      "$comment": "Determines the expected prefix on the names of\nconfig files and environment variables.\nIf `undefined` then parse the name from the\npackage name in `./package.json`.",
+      "type": "string"
+    },
+    "configPath": {
+      "description": "Path to the configuration file to be parsed.",
+      "$comment": "If `undefined`, then will search for a file\n`config.ts` in the current directory and its\nsubdirectories.",
+      "type": "string"
+    },
+    "jsonSchemaPath": {
+      "description": "Path to the JSON Schema file to be generated.",
+      "$comment": "If `undefined`, then will be the path of the\nconfig file with extension `.json.schema` instead of\n`.ts`.",
+      "type": "string"
+    },
+    "readmePath": {
+      "description": "Path to the README file to be updated.",
+      "type": "string",
+      "default": "README.md"
+    }
+  }
+}
