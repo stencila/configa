@@ -21,6 +21,8 @@ npm install --save @stencila/configa
 Configa uses Typescript classes to define configuration options. Create a file `config.ts` with a single class defining your application configuration e.g.
 
 ```ts
+import { minimum, maximum } from '@stencila/configa/dist/define'
+
 /**
  * myapp ${version}: ${description}
  */
@@ -50,7 +52,7 @@ configa schema
 ### 3. Use your configuration in your application code
 
 ```ts
-import configa from '@stencila/config'
+import { collectOptions, helpUsage } from '@stencila/configa/dist/run'
 
 // App config as Typescript for compile time type-checking
 import { Config } from './config'
@@ -58,11 +60,11 @@ import { Config } from './config'
 // App config as JSON Schema for run time type-checking and help generation
 import configSchema from './config.schema.json'
 
-// Generate a Typed
-const { args = [], config } = configa.collectOptions<Config>('configa', configSchema)
+// Generate a typed configuration object
+const { args = [], config } = collectOptions<Config>('configa', configSchema)
 
 // Generate help from the JSON Schema
-if (args.includes('help')) console.log(configa.helpUsage(configSchema))
+if (args.includes('help')) console.log(helpUsage(configSchema))
 ```
 
 
