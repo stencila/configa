@@ -19,9 +19,10 @@ const ajv = new Ajv()
  */
 export const validatorToJsonSchema = (validator: Validator): JSONSchema7 => {
   let { keyword, value } = validator
-  let prop: string= keyword
+  let prop: string = keyword
   if (keyword === 'enumeration') prop = 'enum'
-  if (keyword == 'pattern' && typeof value == 'string') value = value.slice(1, -1)
+  if (keyword === 'pattern' && typeof value === 'string')
+    value = value.slice(1, -1)
   return { [prop]: value }
 }
 

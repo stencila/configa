@@ -54,18 +54,16 @@ describe('parseConfig', () => {
   const logMessages = (num: number): Promise<string[]> =>
     new Promise(resolve => {
       const logMessages: string[] = []
-      replaceHandlers(
-        logData => {
-          const {tag, message} = logData
-          if (tag === 'configa') {
-            logMessages.push(message)
-            if (logMessages.length >= num) {
-              replaceHandlers(defaultHandler)
-              resolve(logMessages)
-            }
+      replaceHandlers(logData => {
+        const { tag, message } = logData
+        if (tag === 'configa') {
+          logMessages.push(message)
+          if (logMessages.length >= num) {
+            replaceHandlers(defaultHandler)
+            resolve(logMessages)
           }
         }
-      )
+      })
     })
 
   test('config-simple-errors.ts', async () => {
