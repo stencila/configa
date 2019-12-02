@@ -1,29 +1,40 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "type": "object",
+  "description": "Fairly simple fixture for testing\nbasic parsing and generation",
+  "$comment": "",
   "properties": {
     "optionA": {
       "description": "A `string` option",
-      "type": "string"
+      "type": "string",
+      "default": "optionADefault"
     },
     "optionB": {
       "description": "A `number` option",
-      "type": "number"
+      "type": "number",
+      "default": 42
     },
     "optionC": {
       "description": "A `boolean` option",
-      "type": "boolean"
+      "type": "boolean",
+      "default": false
     },
     "optionD": {
       "description": "An `array` option",
       "type": "array",
       "items": {
         "type": "string"
-      }
+      },
+      "default": [
+        "a",
+        "b"
+      ]
     },
     "optionE": {
       "description": "Multiline description as a\nbrief summary",
-      "type": "string"
+      "$comment": "Followed by more details on\nthe option which can be Markdown also\n  - item 1\n  - item 2",
+      "type": "string",
+      "default": ""
     },
     "optionF": {
       "description": "Option with a inline enum",
@@ -32,7 +43,8 @@
         "fig",
         "foo",
         "frog"
-      ]
+      ],
+      "default": "fig"
     }
   }
 }

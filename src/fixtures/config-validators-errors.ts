@@ -3,7 +3,7 @@
  * validator decorators.
  */
 
-import { enumeration, maximum, maxItems, maxProperties, minimum, minItems, multipleOf, pattern } from '../define';
+import { enumeration, maximum, maxItems, maxProperties, minimum, minItems, multipleOf } from '../define';
 
 export class ConfigValidatorErrors {
 

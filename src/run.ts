@@ -1,2 +1,2 @@
-export * from './run-cli'
+export * from './run-help'
 export * from './run-collect'

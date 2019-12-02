@@ -7,9 +7,8 @@
 
 import * as typedoc from '@gerrit0/typedoc'
 import json5 from 'json5'
-import { log, Option, Validator } from './common'
-import { validateDefault, validatorToJsonSchema } from './develop-schema'
-import { type } from 'os'
+import { Application, log, Option, Validator } from './common'
+import { validateDefault } from './develop-schema'
 
 /**
  * Parse a Typescript configuration file.
@@ -17,7 +16,7 @@ import { type } from 'os'
  * @param filePath The path the to file
  * @returns An array of configuration options
  */
-export function parseConfig(filePath: string): Option[] {
+export function parseConfig(filePath: string): Application | undefined {
   const app = new typedoc.Application({
     module: 'commonjs',
     target: 'es2017',
@@ -26,17 +25,21 @@ export function parseConfig(filePath: string): Option[] {
   })
 
   const files = app.convert([filePath])
-  if (files === undefined || files.children === undefined) return []
+  if (files === undefined || files.children === undefined) return
 
   // Get the declaration object for the file
   const file = files.children.filter(decl => decl.originalName === filePath)[0]
-  if (file.children === undefined) return []
+  if (file.children === undefined) return
 
   // Get the first class defined in the file
   const clas = Object.values(file.children).filter(
     decl => decl.kindString === 'Class'
   )[0]
-  if (clas.children === undefined) return []
+  if (clas.children === undefined) return
+
+  // Get the description and details
+  const { comment = {} as any } = clas
+  const { shortText: description = '', text: details = '' } = comment
 
   // Sort properties by declaration order within the class
   const props = clas.children.sort((a, b) =>
@@ -50,7 +53,7 @@ export function parseConfig(filePath: string): Option[] {
   // Convert properties into `Options` for easier processing
   // and generate error messages where needed
   const parent = clas.name
-  return props.map((prop: typedoc.DeclarationReflection) => {
+  const options = props.map((prop: typedoc.DeclarationReflection) => {
     const {
       name,
       comment,
@@ -154,6 +157,12 @@ export function parseConfig(filePath: string): Option[] {
 
     return option
   })
+
+  return {
+    description,
+    details,
+    options
+  }
 }
 
 /**

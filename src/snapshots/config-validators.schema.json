@@ -1,6 +1,8 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "type": "object",
+  "description": "",
+  "$comment": "",
   "properties": {
     "optionA": {
       "description": "Option with `enum` decorator",
@@ -9,47 +11,56 @@
         "a",
         "b",
         "c"
-      ]
+      ],
+      "default": "a"
     },
     "optionC": {
       "description": "Option with `multipleOf` decorator",
       "type": "number",
-      "multipleOf": 2
+      "multipleOf": 2,
+      "default": 4
     },
     "optionD": {
       "description": "Option with `maximum` decorator",
       "type": "number",
-      "maximum": 10
+      "maximum": 10,
+      "default": 10
     },
     "optionE": {
       "description": "Option with `exclusiveMaximum` decorator",
       "type": "number",
-      "exclusiveMaximum": 10
+      "exclusiveMaximum": 10,
+      "default": 9
     },
     "optionF": {
       "description": "Option with `minimum` decorator",
       "type": "number",
-      "minimum": 10
+      "minimum": 10,
+      "default": 10
     },
     "optionG": {
       "description": "Option with `exclusiveMinimum` decorator",
       "type": "number",
-      "exclusiveMinimum": 10
+      "exclusiveMinimum": 10,
+      "default": 11
     },
     "optionH": {
       "description": "Option with `maxLength` decorator",
       "type": "string",
-      "maxLength": 3
+      "maxLength": 3,
+      "default": "foo"
     },
     "optionI": {
       "description": "Option with `minLength` decorator",
       "type": "string",
-      "minLength": 3
+      "minLength": 3,
+      "default": "bar"
     },
     "optionJ": {
       "description": "Option with `pattern` decorator",
       "type": "string",
-      "pattern": "/^https?://.+/"
+      "pattern": "/^https?://.+/",
+      "default": "http://example.com"
     },
     "optionK": {
       "description": "Option with `maxItems` decorator",
@@ -57,7 +68,11 @@
       "items": {
         "type": "number"
       },
-      "maxItems": 2
+      "maxItems": 2,
+      "default": [
+        1,
+        2
+      ]
     },
     "optionL": {
       "description": "Option with `minItems` decorator",
@@ -65,7 +80,10 @@
       "items": {
         "type": "number"
       },
-      "minItems": 1
+      "minItems": 1,
+      "default": [
+        1
+      ]
     },
     "optionM": {
       "description": "Option with `uniqueItems` decorator",
@@ -73,7 +91,8 @@
       "items": {
         "type": "string"
       },
-      "uniqueItems": true
+      "uniqueItems": true,
+      "default": []
     },
     "optionN": {
       "description": "Option with `maxContains` decorator",
@@ -86,7 +105,12 @@
           "a"
         ]
       },
-      "maxContains": 2
+      "maxContains": 2,
+      "default": [
+        "a",
+        "b",
+        "a"
+      ]
     },
     "optionO": {
       "description": "Option with `minContains` decorator",
@@ -99,7 +123,10 @@
           "a"
         ]
       },
-      "minContains": 1
+      "minContains": 1,
+      "default": [
+        "a"
+      ]
     },
     "optionP": {
       "description": "Option with `maxProperties` decorator",

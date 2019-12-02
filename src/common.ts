@@ -12,40 +12,21 @@ import { getLogger } from '@stencila/logga'
  */
 export const log = getLogger('configa')
 
-/**
- * A JSON Schema validator.
- *
- * @see {@link https://datatracker.ietf.org/doc/draft-handrews-json-schema-validation| JSON Schema}
- */
-export interface Validator {
+export interface Application {
   /**
-   * The validation keyword
+   * A description of the application
    */
-  keyword:
-    | 'enumeration'
-    | 'multipleOf'
-    | 'maximum'
-    | 'exclusiveMaximum'
-    | 'minimum'
-    | 'exclusiveMinimum'
-    | 'pattern'
-    | 'maxLength'
-    | 'minLength'
-    | 'uniqueItems'
-    | 'maxItems'
-    | 'minItems'
-    | 'contains'
-    | 'maxContains'
-    | 'minContains'
-    | 'maxProperties'
-    | 'minProperties'
-    | 'required'
-    | 'dependentRequired'
+  description: string
 
   /**
-   * The validation value (i.e. argument)
+   * Details of the application
    */
-  value: unknown
+  details: string
+
+  /**
+   * Application configuration options
+   */
+  options: Option[]
 }
 
 /**
@@ -91,4 +72,40 @@ export interface Option {
    * A list of validators to be applied to the option.
    */
   validators?: Validator[]
+}
+
+/**
+ * A JSON Schema validator.
+ *
+ * @see {@link https://datatracker.ietf.org/doc/draft-handrews-json-schema-validation| JSON Schema}
+ */
+export interface Validator {
+  /**
+   * The validation keyword
+   */
+  keyword:
+    | 'enumeration'
+    | 'multipleOf'
+    | 'maximum'
+    | 'exclusiveMaximum'
+    | 'minimum'
+    | 'exclusiveMinimum'
+    | 'pattern'
+    | 'maxLength'
+    | 'minLength'
+    | 'uniqueItems'
+    | 'maxItems'
+    | 'minItems'
+    | 'contains'
+    | 'maxContains'
+    | 'minContains'
+    | 'maxProperties'
+    | 'minProperties'
+    | 'required'
+    | 'dependentRequired'
+
+  /**
+   * The validation value (i.e. argument)
+   */
+  value: unknown
 }

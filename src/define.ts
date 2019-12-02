@@ -17,6 +17,8 @@
  * - `const`, since having a constant option is sorta pointless
  */
 
+/* eslint-disable @typescript-eslint/no-unused-vars */
+
 // These validation decorators are purely declarative and used in static analysis
 // of configuration options. They all return the `propertyDecorator` function
 // which does nothing.
@@ -24,8 +26,6 @@ const propertyDecorator: PropertyDecorator = (
   target: Record<string, any>,
   propertyKey: string | symbol
 ) => {}
-
-/* eslint-disable @typescript-eslint/no-unused-vars */
 
 // Validation keywords for any instance type
 

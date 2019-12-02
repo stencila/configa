@@ -97,6 +97,7 @@
     "@gerrit0/typedoc": "^0.15.10",
     "@stencila/logga": "^2.0.0",
     "ajv": "^6.10.2",
+    "ansi-colors": "^4.1.1",
     "globby": "^10.0.1",
     "json5": "^2.1.1",
     "rc": "^1.2.8"

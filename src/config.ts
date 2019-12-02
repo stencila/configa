@@ -1,8 +1,5 @@
 /**
- * Configuration options for Configa itself.
- *
- * These are mostly used during development when using `cli.ts`
- * to generate configuration files and documentation.
+ * Configa ${version}
  */
 export class Config {
   /**

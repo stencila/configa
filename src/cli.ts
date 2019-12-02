@@ -2,19 +2,30 @@
 
 import fs from 'fs'
 import globby from 'globby'
-import { collectOptions, parseConfig, updateJsonSchema, updateReadme } from '.'
+import {
+  collectOptions,
+  helpListOptions,
+  parseConfig,
+  updateJsonSchema,
+  updateReadme
+} from '.'
 import { log } from './common'
 import { Config } from './config'
 import configSchema from './config.schema.json'
+import { helpUsage } from './run-help'
 ;(() => {
   const { args = ['readme', 'schema'], config } = collectOptions<Config>(
     'configa',
     configSchema
   )
 
+  if (args.includes('help'))
+    return console.log(helpUsage(configSchema, args[1]))
+
+  const pkg = JSON.parse(fs.readFileSync('package.json', 'utf8'))
+
   let { appName, configPath, jsonSchemaPath, readmePath } = config
   if (appName === undefined) {
-    const pkg = JSON.parse(fs.readFileSync('package.json', 'utf8'))
     const match = pkg.name.match(/(@\w+\/)?(\w+)$/)
     if (match === null) {
       log.error(`Could not parse app name from package name: ${pkg.name}`)
@@ -40,7 +51,12 @@ import configSchema from './config.schema.json'
     jsonSchemaPath = configPath.replace(/\.ts$/, '.schema.json')
   }
 
-  const options = parseConfig(configPath)
-  if (args.includes('readme')) updateReadme(readmePath, appName, options)
-  if (args.includes('schema')) updateJsonSchema(jsonSchemaPath, options)
+  const app = parseConfig(configPath)
+  if (app === undefined) {
+    log.error(`Could not parse application config from: ${configPath}`)
+    return
+  }
+
+  if (args.includes('readme')) updateReadme(readmePath, appName, app.options)
+  if (args.includes('schema')) updateJsonSchema(jsonSchemaPath, app, pkg)
 })()

@@ -31,7 +31,13 @@ export function collectOptions<ConfigType extends object>(
   const log = getLogger(appName)
 
   // Use rc to collect options from config files and argv
-  const { _, ...options } = rc(appName)
+  let { _, ...options } = rc(appName)
+
+  // Transform the `---help` and `--version` "options" into
+  // arguments (to be treated as commands)
+  if ('version' in options) _ = ['version', ..._]
+  if ('help' in options) _ = ['help', ..._]
+
   const args = _.length > 0 ? _ : undefined
 
   // Validate and coerce options against schema

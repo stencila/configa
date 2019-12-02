@@ -8,7 +8,7 @@
 import Ajv from 'ajv'
 import fs from 'fs'
 import { JSONSchema7 } from 'json-schema'
-import { log, Option, Validator } from './common'
+import { log, Option, Validator, Application } from './common'
 
 const ajv = new Ajv()
 
@@ -100,14 +100,31 @@ export const typeToJsonSchema = (
 }
 
 /**
- * Generate a JSON Schema definition for a set of options.
+ * Generate a JSON Schema definition for an application.
  *
- * @param option The option to generate the schema for
+ * @param app The application to generate the schema for
  */
 export const generateJsonSchemaDefinition = (
-  options: Option[]
+  app: Application,
+  pkg?: object
 ): JSONSchema7 => {
-  // @ts-ignore
+  let { description, details: $comment, options } = app
+
+  if (pkg !== undefined) {
+    const { name = '', description: desc = '', version = '' } = pkg as {
+      [key: string]: string
+    }
+    const interpolate = (str: string) =>
+      /* eslint-disable no-template-curly-in-string */
+      str
+        .replace('${name}', name)
+        .replace('${description}', desc)
+        .replace('${version}', version)
+    /* eslint-enable no-template-curly-in-string */
+    description = interpolate(description)
+    $comment = interpolate($comment)
+  }
+
   const properties = options.reduce(
     (properties: { [key: string]: JSONSchema7 }, option: Option) => {
       const {
@@ -134,25 +151,30 @@ export const generateJsonSchemaDefinition = (
   return {
     $schema: 'http://json-schema.org/draft-07/schema#',
     type: 'object',
+    description,
+    $comment,
     properties
   } as JSONSchema7
 }
 
 /**
- * Generate a JSON Schema document for a set of options.
+ * Generate a JSON Schema document for an application.
  *
- * @param option The option to generate the schema for
+ * @param app The application to generate the schema for
  */
-export const generateJsonSchema = (options: Option[]): string =>
-  JSON.stringify(generateJsonSchemaDefinition(options), null, '  ')
+export const generateJsonSchema = (app: Application, pkg?: object): string =>
+  JSON.stringify(generateJsonSchemaDefinition(app, pkg), null, '  ')
 
 /**
- * Generate a JSON Schema document for a set of options.
+ * Update a JSON Schema file for an application.
  *
- * @param option The option to generate the schema for
+ * @param app The application to generate the schema for
  */
-export const updateJsonSchema = (filePath: string, options: Option[]): void =>
-  fs.writeFileSync(filePath, generateJsonSchema(options))
+export const updateJsonSchema = (
+  filePath: string,
+  app: Application,
+  pkg?: object
+): void => fs.writeFileSync(filePath, generateJsonSchema(app, pkg))
 
 /**
  * Check that the default value for an option is valid
@@ -164,7 +186,11 @@ export const validateDefault = (option: Option): void => {
   const { parent, name, defaultValue } = option
   if (defaultValue === undefined) return
   const id = `${parent}.${name}`
-  const schema = generateJsonSchemaDefinition([option])
+  const schema = generateJsonSchemaDefinition({
+    description: 'Single option',
+    details: '',
+    options: [option]
+  })
   let validate
   try {
     validate = ajv.compile(schema)

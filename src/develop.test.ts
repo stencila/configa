@@ -26,6 +26,7 @@ import {
  */
 import { ConfigSimple } from './fixtures/config-simple'
 import { ConfigValidators } from './fixtures/config-validators'
+import { Application } from './common'
 
 // Get the path to a fixture file
 const fixture = (name: string): string => path.join(__dirname, 'fixtures', name)
@@ -43,8 +44,10 @@ const configValidatorsDefaults = new ConfigValidators()
 /* eslint-enable @typescript-eslint/no-unused-vars */
 
 // Parse the test configs for use across below tests
-const configSimple = parseConfig(fixture('config-simple.ts'))
-const configValidators = parseConfig(fixture('config-validators.ts'))
+const configSimple = parseConfig(fixture('config-simple.ts')) as Application
+const configValidators = parseConfig(
+  fixture('config-validators.ts')
+) as Application
 
 describe('parseConfig', () => {
   // Remove the default log handler to reduce noise
@@ -107,19 +110,19 @@ test('generateJsonSchema', () => {
 })
 
 test('generateJsonSample', () => {
-  expect(generateJsonSample(configSimple)).toMatchFile(
+  expect(generateJsonSample(configSimple.options)).toMatchFile(
     snapshot('config-simple.json')
   )
-  expect(generateJsonSample(configValidators)).toMatchFile(
+  expect(generateJsonSample(configValidators.options)).toMatchFile(
     snapshot('config-validators.json')
   )
 })
 
 test('generateMdTable', () => {
-  expect(generateMdTable(configSimple)).toMatchFile(
+  expect(generateMdTable(configSimple.options)).toMatchFile(
     snapshot('config-simple-table.md')
   )
-  expect(generateMdTable(configValidators)).toMatchFile(
+  expect(generateMdTable(configValidators.options)).toMatchFile(
     snapshot('config-validators-table.md')
   )
 })
