@@ -12,7 +12,6 @@ import {
 import { log } from './common'
 import { Config } from './config'
 import configSchema from './config.schema.json'
-
 ;(() => {
   const { args = ['readme', 'schema'], config } = collectOptions<Config>(
     'configa',

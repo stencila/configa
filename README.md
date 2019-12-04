@@ -67,7 +67,6 @@ const { args = [], config } = collectOptions<Config>('configa', configSchema)
 if (args.includes('help')) console.log(helpUsage(configSchema))
 ```
 
-
 ### 4. Generate configuration documentation
 
 In your `README.md` add comments to indicate where to insert documentation e.g.

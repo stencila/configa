@@ -46,10 +46,14 @@ export function generateMdTable(options: Option[], addDetails = true): string {
       validators,
       defaultValue
     } = option
-    const descriptionCell = (description +
+    const descriptionCell = (
+      description +
       (addDetails && details !== undefined
         ? `<a href="#${name}-details"><sup>${++detailsCount}</sup></a>`
-        : '')).replace(/\s+/gm, ' ').replace(/\|/, '\\|')
+        : '')
+    )
+      .replace(/\s+/gm, ' ')
+      .replace(/\|/, '\\|')
     const typesCell = `\`${types.join(' | ')}\``
     const validatorsCell =
       validators === undefined
@@ -58,13 +62,7 @@ export function generateMdTable(options: Option[], addDetails = true): string {
             .map(({ keyword, value }) => `${keyword}: \`${value}\``)
             .join(',<br>')
     const defaultCell = `\`${JSON.stringify(defaultValue)}\``
-    return [
-      name,
-      descriptionCell,
-      typesCell,
-      validatorsCell,
-      defaultCell
-    ]
+    return [name, descriptionCell, typesCell, validatorsCell, defaultCell]
   })
 
   // Get maximum width of content in each column
