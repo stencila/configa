@@ -8,6 +8,7 @@
 import rc from 'rc'
 import Ajv from 'ajv'
 import { getLogger, Logger } from '@stencila/logga'
+import { JSONSchema7 } from 'json-schema'
 
 const ajv = new Ajv({
   // Coerce type of data to match type keyword and coerce scalar
@@ -40,7 +41,52 @@ export function collectOptions<ConfigType extends object>(
 
   const args = _.length > 0 ? _ : undefined
 
-  // Validate and coerce options against schema
+  const coerced = coerceOptions(options, schema)
+  const [validated, valid] = validateOptions(coerced, schema, log)
+
+  const config = validated as ConfigType
+  return { args, config, valid, log }
+}
+
+/**
+ * Coerce options to a JSON Schema.
+ *
+ * This function only does coercions that Ajv does not.
+ *
+ * @param value The value to coerce
+ * @param schema The schema to coerce to
+ * @param log A logger to emit messages to
+ */
+export function coerceOptions(value: any, schema?: JSONSchema7): object {
+  if (schema === undefined) return value
+  const { type, properties } = schema
+
+  if (typeof value === 'string' && type === 'array')
+    return value.split(/\s*,\s*/)
+
+  if (value === null || typeof value !== 'object' || Array.isArray(value))
+    return value
+
+  if (properties === undefined) return value
+
+  return Object.entries(value).reduce((prev, [key, child]) => {
+    const value = coerceOptions(child, properties[key] as JSONSchema7)
+    return { ...prev, ...{ [key]: value } }
+  }, {})
+}
+
+/**
+ * Validate (and coerce where necessary) options against a JSON Schema
+ *
+ * @param options The options to validate
+ * @param schema The schema to validate against
+ * @param log A logger to emit messages to
+ */
+export function validateOptions(
+  options: object,
+  schema: JSONSchema7,
+  log: Logger
+): [object, boolean] {
   const validate = ajv.compile(schema)
   const valid = validate(options) as boolean
   if (!valid) {
@@ -57,7 +103,5 @@ export function collectOptions<ConfigType extends object>(
       }
     }
   }
-
-  const config = options as ConfigType
-  return { args, config, valid, log }
+  return [options, valid]
 }
