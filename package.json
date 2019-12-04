@@ -1,6 +1,6 @@
 {
   "name": "@stencila/configa",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "description": "Application configuration: DRY, flexible and type-safe",
   "bin": "dist/cli.js",
   "main": "dist/index.js",

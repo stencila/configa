@@ -1,3 +1,10 @@
+# [0.3.0](https://github.com/stencila/configa/compare/v0.2.1...v0.3.0) (2019-12-04)
+
+
+### Features
+
+* **Run time:** Coerce comma separated items into array ([601ffe3](https://github.com/stencila/configa/commit/601ffe36394ee2874107f84697c8a2ff103d3b3a))
+
 ## [0.2.1](https://github.com/stencila/configa/compare/v0.2.0...v0.2.1) (2019-12-02)
 
 
