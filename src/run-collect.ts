@@ -25,10 +25,16 @@ const ajv = new Ajv({
  *
  * @param appName The name of the application to collect configuration options for.
  */
-export function collectOptions<ConfigType extends object>(
+export function collectConfig<ConfigType extends object>(
   appName: string,
   schema: object
-): { args?: string[]; config: ConfigType; valid: boolean; log: Logger } {
+): {
+  args?: string[]
+  options: {[key: string]: any}
+  config: ConfigType
+  valid: boolean
+  log: Logger
+} {
   const log = getLogger(appName)
 
   // Use rc to collect options from config files and argv
@@ -45,7 +51,7 @@ export function collectOptions<ConfigType extends object>(
   const [validated, valid] = validateOptions(coerced, schema, log)
 
   const config = validated as ConfigType
-  return { args, config, valid, log }
+  return { args, options, config, valid, log }
 }
 
 /**

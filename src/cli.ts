@@ -3,7 +3,7 @@
 import fs from 'fs'
 import globby from 'globby'
 import {
-  collectOptions,
+  collectConfig,
   helpUsage,
   parseConfig,
   updateJsonSchema,
@@ -13,7 +13,7 @@ import { log } from './common'
 import { Config } from './config'
 import configSchema from './config.schema.json'
 ;(() => {
-  const { args = ['readme', 'schema'], config } = collectOptions<Config>(
+  const { args = ['readme', 'schema'], config } = collectConfig<Config>(
     'configa',
     configSchema
   )

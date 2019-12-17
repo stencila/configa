@@ -52,7 +52,7 @@ configa schema
 ### 3. Use your configuration in your application code
 
 ```ts
-import { collectOptions, helpUsage } from '@stencila/configa/dist/run'
+import { collectConfig, helpUsage } from '@stencila/configa/dist/run'
 
 // App config as Typescript for compile time type-checking
 import { Config } from './config'
@@ -61,7 +61,7 @@ import { Config } from './config'
 import configSchema from './config.schema.json'
 
 // Generate a typed configuration object
-const { args = [], config } = collectOptions<Config>('configa', configSchema)
+const { args = [], config } = collectConfig<Config>('myapp', configSchema)
 
 // Generate help from the JSON Schema
 if (args.includes('help')) console.log(helpUsage(configSchema))
