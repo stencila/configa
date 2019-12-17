@@ -1,3 +1,10 @@
+# [0.4.0](https://github.com/stencila/configa/compare/v0.3.0...v0.4.0) (2019-12-17)
+
+
+### Features
+
+* **collectConfig:** Rename and include all options collections. ([e991a43](https://github.com/stencila/configa/commit/e991a43b1b68a854b9f0fe5c02b19c28e9e95c27))
+
 # [0.3.0](https://github.com/stencila/configa/compare/v0.2.1...v0.3.0) (2019-12-04)
 
 
