@@ -30,7 +30,7 @@ export function collectConfig<ConfigType extends object>(
   schema: object
 ): {
   args?: string[]
-  options: {[key: string]: any}
+  options: { [key: string]: any }
   config: ConfigType
   valid: boolean
   log: Logger
