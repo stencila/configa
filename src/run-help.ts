@@ -7,13 +7,13 @@
 
 import { JSONSchema7 } from 'json-schema'
 import json5 from 'json5'
-import colors from 'ansi-colors'
+import chalk from 'chalk'
 
 export function helpUsage(schema: object, option?: string): string {
   if (option === undefined) {
     const { description = '' } = schema as JSONSchema7
     const options = helpListOptions(schema)
-    return `${description}\n\n${colors.bold('Options')}\n${options}`
+    return `${description}\n\n${chalk.bold('Options')}\n${options}`
   } else {
     return helpForOption(schema, option)
   }
@@ -25,7 +25,7 @@ export function helpListOptions(schema: object): string {
     .map(([name, schema]) => {
       if (typeof schema === 'boolean') return ''
       const { description, type, anyOf, default: defaultValue } = schema
-      let line = `${colors.magenta(name.padEnd(20))} ${description}`
+      let line = `${chalk.magenta(name.padEnd(20))} ${description}`
 
       let typeName
       if (type === undefined && anyOf !== undefined) {
@@ -36,10 +36,10 @@ export function helpListOptions(schema: object): string {
       } else {
         typeName = type
       }
-      line += colors.italic.cyan(` ${typeName}`)
+      line += chalk.italic.cyan(` ${typeName}`)
 
       if (defaultValue !== undefined)
-        line += colors.grey(` ${json5.stringify(defaultValue)}`)
+        line += chalk.grey(` ${json5.stringify(defaultValue)}`)
       return line
     })
     .join('\n')}`
