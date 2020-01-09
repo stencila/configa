@@ -1,3 +1,10 @@
+## [0.4.2](https://github.com/stencila/configa/compare/v0.4.1...v0.4.2) (2020-01-09)
+
+
+### Bug Fixes
+
+* **Deps:** Use chalk instead of ansi-colors ([afd4b52](https://github.com/stencila/configa/commit/afd4b526cadd9ec8974d1e3ea6c7280388fd8171)), closes [#3](https://github.com/stencila/configa/issues/3)
+
 ## [0.4.1](https://github.com/stencila/configa/compare/v0.4.0...v0.4.1) (2020-01-09)
 
 
