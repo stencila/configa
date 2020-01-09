@@ -1,3 +1,10 @@
+## [0.4.1](https://github.com/stencila/configa/compare/v0.4.0...v0.4.1) (2020-01-09)
+
+
+### Bug Fixes
+
+* **deps:** update dependency globby to v11 ([e3c3ab0](https://github.com/stencila/configa/commit/e3c3ab025e01e123f839cb017262490d5e666a42))
+
 # [0.4.0](https://github.com/stencila/configa/compare/v0.3.0...v0.4.0) (2019-12-17)
 
 
