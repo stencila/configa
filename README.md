@@ -84,6 +84,7 @@ configa readme
 
 ## Usage
 
+<!-- prettier-ignore-start -->
 <!-- CONFIGA-USAGE-BEGIN -->
 All configuration options can be set, in descending order of priority, by:
 
@@ -113,3 +114,4 @@ config file with extension `.json.schema` instead of
 `.ts`.
 
 <!-- CONFIGA-TABLE-END -->
+<!-- prettier-ignore-end -->
