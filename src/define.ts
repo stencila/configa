@@ -25,7 +25,9 @@
 const propertyDecorator: PropertyDecorator = (
   target: Record<string, any>,
   propertyKey: string | symbol
-) => {}
+) => {
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
+}
 
 // Validation keywords for any instance type
 

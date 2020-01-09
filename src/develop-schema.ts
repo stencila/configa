@@ -117,7 +117,7 @@ export const generateJsonSchemaDefinition = (
     const { name = '', description: desc = '', version = '' } = pkg as {
       [key: string]: string
     }
-    const interpolate = (str: string) =>
+    const interpolate = (str: string): string =>
       /* eslint-disable no-template-curly-in-string */
       str
         .replace('${name}', name)
