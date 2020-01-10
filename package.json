@@ -101,5 +101,11 @@
   "prettier": "@stencila/dev-config/prettier-config.json",
   "release": {
     "extends": "@stencila/semantic-release-config"
+  },
+  "renovate": {
+    "extends": [
+      "@stencila"
+    ],
+    "schedule": "before 3am on Monday"
   }
 }
