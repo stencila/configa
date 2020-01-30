@@ -36,16 +36,16 @@
   },
   "homepage": "https://github.com/stencila/configa#readme",
   "devDependencies": {
-    "@stencila/dev-config": "1.4.5",
-    "@types/jest": "25.1.0",
+    "@stencila/dev-config": "1.4.11",
+    "@types/jest": "25.1.1",
     "@types/json5": "0.0.30",
     "@types/rc": "1.1.0",
     "jest": "25.1.0",
     "jest-file-snapshot": "0.3.8",
     "json-schema": "0.2.5",
-    "ts-jest": "25.0.0",
+    "ts-jest": "25.1.0",
     "ts-node": "8.6.2",
-    "typescript": "3.7.4"
+    "typescript": "3.7.5"
   },
   "dependencies": {
     "@gerrit0/typedoc": "^0.15.10",
