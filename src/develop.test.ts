@@ -73,7 +73,7 @@ describe('parseConfig', () => {
       'Option is missing description: ConfigSimpleErrors.optionA',
       "Option has type 'any': ConfigSimpleErrors.optionC",
       "Option has type 'any': ConfigSimpleErrors.optionD",
-      "Option default value can not be parsed: ConfigSimpleErrors.optionE: JSON5: invalid character 'c' at 1:2",
+      "Option default value can not be parsed: ConfigSimpleErrors.optionE: JSON5: invalid character 'c' at 1:1",
       'Option has long description: ConfigSimpleErrors.optionF'
     ])
   })

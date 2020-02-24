@@ -5,7 +5,7 @@
  * during development of a package using Configa.
  */
 
-import * as typedoc from '@gerrit0/typedoc'
+import * as typedoc from 'typedoc'
 import json5 from 'json5'
 import { Application, log, Option, Validator } from './common'
 import { validateDefault } from './develop-schema'
@@ -17,9 +17,8 @@ import { validateDefault } from './develop-schema'
  * @returns An array of configuration options
  */
 export function parseConfig(filePath: string): Application | undefined {
-  const app = new typedoc.Application({
-    module: 'commonjs',
-    target: 'es2017',
+  const app = new typedoc.Application()
+  app.bootstrap({
     esModuleInterop: true,
     experimentalDecorators: true
   })
