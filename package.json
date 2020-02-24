@@ -48,7 +48,7 @@
     "typescript": "3.7.5"
   },
   "dependencies": {
-    "@gerrit0/typedoc": "^0.15.10",
+    "@gerrit0/typedoc": "^0.15.12",
     "@stencila/logga": "^2.1.0",
     "ajv": "^6.10.2",
     "chalk": "^3.0.0",
