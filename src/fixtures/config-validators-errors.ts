@@ -3,6 +3,8 @@
  * validator decorators.
  */
 
+ /* eslint-disable @typescript-eslint/ban-ts-ignore */
+
 import { enumeration, maximum, maxItems, maxProperties, minimum, minItems, multipleOf } from '../define';
 
 export class ConfigValidatorErrors {
