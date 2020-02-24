@@ -1,3 +1,10 @@
+## [0.4.3](https://github.com/stencila/configa/compare/v0.4.2...v0.4.3) (2020-02-24)
+
+
+### Bug Fixes
+
+* **Dependencies:** Use main Typedoc package ([9822014](https://github.com/stencila/configa/commit/9822014edc516d1e3a54e9be83c9df2fab771094))
+
 ## [0.4.2](https://github.com/stencila/configa/compare/v0.4.1...v0.4.2) (2020-01-09)
 
 
