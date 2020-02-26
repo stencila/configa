@@ -1,3 +1,10 @@
+## [0.4.4](https://github.com/stencila/configa/compare/v0.4.3...v0.4.4) (2020-02-26)
+
+
+### Bug Fixes
+
+* **deps:** update dependency ajv to ^6.12.0 ([925d4c8](https://github.com/stencila/configa/commit/925d4c85fb8470d7b058e4efb657aa48b68f489e))
+
 ## [0.4.3](https://github.com/stencila/configa/compare/v0.4.2...v0.4.3) (2020-02-24)
 
 
