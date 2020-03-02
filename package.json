@@ -54,7 +54,7 @@
     "globby": "^11.0.0",
     "json5": "^2.1.1",
     "rc": "^1.2.8",
-    "typedoc": "^0.16.10"
+    "typedoc": "^0.16.11"
   },
   "commitlint": {
     "extends": [
