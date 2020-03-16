@@ -1,3 +1,10 @@
+## [0.4.6](https://github.com/stencila/configa/compare/v0.4.5...v0.4.6) (2020-03-16)
+
+
+### Bug Fixes
+
+* **dependencies:** update dependency typedoc to ^0.17.0 ([f797088](https://github.com/stencila/configa/commit/f79708856d6548af124f5a9ea6f082dc13331487))
+
 ## [0.4.5](https://github.com/stencila/configa/compare/v0.4.4...v0.4.5) (2020-03-02)
 
 
