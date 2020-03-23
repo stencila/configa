@@ -1,3 +1,11 @@
+## [0.4.7](https://github.com/stencila/configa/compare/v0.4.6...v0.4.7) (2020-03-23)
+
+
+### Bug Fixes
+
+* **dependencies:** update dependency json5 to ^2.1.2 ([afe0216](https://github.com/stencila/configa/commit/afe02162d25771eb03b3335ff5e394d27552fea3))
+* **dependencies:** update dependency typedoc to ^0.17.3 ([943779f](https://github.com/stencila/configa/commit/943779f2217da9c41289fe2c4979a90f5c57d2a4))
+
 ## [0.4.6](https://github.com/stencila/configa/compare/v0.4.5...v0.4.6) (2020-03-16)
 
 
