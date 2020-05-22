@@ -1,0 +1,1878 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>@stencila/configa</title>
+	<meta name="description" content="Documentation for @stencila/configa">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="assets/js/search.json" data-base=".">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="index.html" class="title">@stencila/configa</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+							<input type="checkbox" id="tsd-filter-only-exported" />
+							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="globals.html">Globals</a>
+				</li>
+			</ul>
+			<h1>@stencila/configa</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<section class="tsd-panel-group tsd-index-group">
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section ">
+							<h3>Classes</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-class"><a href="classes/config.html" class="tsd-kind-icon">Config</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Interfaces</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-interface"><a href="interfaces/application.html" class="tsd-kind-icon">Application</a></li>
+								<li class="tsd-kind-interface"><a href="interfaces/option.html" class="tsd-kind-icon">Option</a></li>
+								<li class="tsd-kind-interface"><a href="interfaces/validator.html" class="tsd-kind-icon">Validator</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Variables</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-variable"><a href="globals.html#ajv" class="tsd-kind-icon">ajv</a></li>
+								<li class="tsd-kind-variable"><a href="globals.html#log" class="tsd-kind-icon">log</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Functions</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-function"><a href="globals.html#coerceoptions" class="tsd-kind-icon">coerce<wbr>Options</a></li>
+								<li class="tsd-kind-function tsd-has-type-parameter"><a href="globals.html#collectconfig" class="tsd-kind-icon">collect<wbr>Config</a></li>
+								<li class="tsd-kind-function"><a href="globals.html#contains" class="tsd-kind-icon">contains</a></li>
+								<li class="tsd-kind-function"><a href="globals.html#dependentrequired" class="tsd-kind-icon">dependent<wbr>Required</a></li>
+								<li class="tsd-kind-function"><a href="globals.html#enumeration" class="tsd-kind-icon">enumeration</a></li>
+								<li class="tsd-kind-function"><a href="globals.html#exclusivemaximum" class="tsd-kind-icon">exclusive<wbr>Maximum</a></li>
+								<li class="tsd-kind-function"><a href="globals.html#exclusiveminimum" class="tsd-kind-icon">exclusive<wbr>Minimum</a></li>
+								<li class="tsd-kind-function"><a href="globals.html#generatejsonsample" class="tsd-kind-icon">generate<wbr>Json<wbr>Sample</a></li>
+								<li class="tsd-kind-function"><a href="globals.html#generatejsonschema" class="tsd-kind-icon">generate<wbr>Json<wbr>Schema</a></li>
+								<li class="tsd-kind-function"><a href="globals.html#generatejsonschemadefinition" class="tsd-kind-icon">generate<wbr>Json<wbr>Schema<wbr>Definition</a></li>
+								<li class="tsd-kind-function"><a href="globals.html#generatemddetails" class="tsd-kind-icon">generate<wbr>MdDetails</a></li>
+								<li class="tsd-kind-function"><a href="globals.html#generatemdtable" class="tsd-kind-icon">generate<wbr>MdTable</a></li>
+								<li class="tsd-kind-function"><a href="globals.html#generatemdusage" class="tsd-kind-icon">generate<wbr>MdUsage</a></li>
+								<li class="tsd-kind-function"><a href="globals.html#helpforoption" class="tsd-kind-icon">help<wbr>For<wbr>Option</a></li>
+								<li class="tsd-kind-function"><a href="globals.html#helplistoptions" class="tsd-kind-icon">help<wbr>List<wbr>Options</a></li>
+								<li class="tsd-kind-function"><a href="globals.html#helpusage" class="tsd-kind-icon">help<wbr>Usage</a></li>
+								<li class="tsd-kind-function"><a href="globals.html#insertmd" class="tsd-kind-icon">insert<wbr>Md</a></li>
+								<li class="tsd-kind-function"><a href="globals.html#insertmdintofile" class="tsd-kind-icon">insert<wbr>MdInto<wbr>File</a></li>
+								<li class="tsd-kind-function"><a href="globals.html#maxcontains" class="tsd-kind-icon">max<wbr>Contains</a></li>
+								<li class="tsd-kind-function"><a href="globals.html#maxitems" class="tsd-kind-icon">max<wbr>Items</a></li>
+								<li class="tsd-kind-function"><a href="globals.html#maxlength" class="tsd-kind-icon">max<wbr>Length</a></li>
+								<li class="tsd-kind-function"><a href="globals.html#maxproperties" class="tsd-kind-icon">max<wbr>Properties</a></li>
+								<li class="tsd-kind-function"><a href="globals.html#maximum" class="tsd-kind-icon">maximum</a></li>
+								<li class="tsd-kind-function"><a href="globals.html#mincontains" class="tsd-kind-icon">min<wbr>Contains</a></li>
+								<li class="tsd-kind-function"><a href="globals.html#minitems" class="tsd-kind-icon">min<wbr>Items</a></li>
+								<li class="tsd-kind-function"><a href="globals.html#minlength" class="tsd-kind-icon">min<wbr>Length</a></li>
+								<li class="tsd-kind-function"><a href="globals.html#minproperties" class="tsd-kind-icon">min<wbr>Properties</a></li>
+								<li class="tsd-kind-function"><a href="globals.html#minimum" class="tsd-kind-icon">minimum</a></li>
+								<li class="tsd-kind-function"><a href="globals.html#multipleof" class="tsd-kind-icon">multiple<wbr>Of</a></li>
+								<li class="tsd-kind-function"><a href="globals.html#parseconfig" class="tsd-kind-icon">parse<wbr>Config</a></li>
+								<li class="tsd-kind-function"><a href="globals.html#parsedecorator" class="tsd-kind-icon">parse<wbr>Decorator</a></li>
+								<li class="tsd-kind-function"><a href="globals.html#pattern" class="tsd-kind-icon">pattern</a></li>
+								<li class="tsd-kind-function"><a href="globals.html#propertydecorator" class="tsd-kind-icon">property<wbr>Decorator</a></li>
+								<li class="tsd-kind-function"><a href="globals.html#required" class="tsd-kind-icon">required</a></li>
+								<li class="tsd-kind-function"><a href="globals.html#typetojsonschema" class="tsd-kind-icon">type<wbr>ToJson<wbr>Schema</a></li>
+								<li class="tsd-kind-function"><a href="globals.html#uniqueitems" class="tsd-kind-icon">unique<wbr>Items</a></li>
+								<li class="tsd-kind-function"><a href="globals.html#updatejsonschema" class="tsd-kind-icon">update<wbr>Json<wbr>Schema</a></li>
+								<li class="tsd-kind-function"><a href="globals.html#updatereadme" class="tsd-kind-icon">update<wbr>Readme</a></li>
+								<li class="tsd-kind-function"><a href="globals.html#validatedefault" class="tsd-kind-icon">validate<wbr>Default</a></li>
+								<li class="tsd-kind-function"><a href="globals.html#validateoptions" class="tsd-kind-icon">validate<wbr>Options</a></li>
+								<li class="tsd-kind-function"><a href="globals.html#validatortojsonschema" class="tsd-kind-icon">validator<wbr>ToJson<wbr>Schema</a></li>
+								<li class="tsd-kind-function"><a href="globals.html#validatorsfortype" class="tsd-kind-icon">validators<wbr>For<wbr>Type</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Variables</h2>
+				<section class="tsd-panel tsd-member tsd-kind-variable">
+					<a name="ajv" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> ajv</h3>
+					<div class="tsd-signature tsd-kind-icon">ajv<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Ajv</span><span class="tsd-signature-symbol"> = new Ajv({// Coerce type of data to match type keyword and coerce scalar// data to an array with one element and vice versa, as needed.coerceTypes: true,// Use default values where properties are missing.useDefaults: true,// Generate all error messagesallErrors: true,})</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/stencila/configa/blob/28884de/src/develop-schema.ts#L13">develop-schema.ts:13</a></li>
+							<li>Defined in <a href="https://github.com/stencila/configa/blob/28884de/src/run-collect.ts#L13">run-collect.ts:13</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-variable">
+					<a name="log" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> log</h3>
+					<div class="tsd-signature tsd-kind-icon">log<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Logger</span><span class="tsd-signature-symbol"> = getLogger(&#x27;configa&#x27;)</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/stencila/configa/blob/28884de/src/common.ts#L13">common.ts:13</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>A log instance.</p>
+						</div>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Functions</h2>
+				<section class="tsd-panel tsd-member tsd-kind-function">
+					<a name="coerceoptions" class="tsd-anchor"></a>
+					<h3>coerce<wbr>Options</h3>
+					<ul class="tsd-signatures tsd-kind-function">
+						<li class="tsd-signature tsd-kind-icon">coerce<wbr>Options<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, schema<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">JSONSchema7</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/stencila/configa/blob/28884de/src/run-collect.ts#L66">run-collect.ts:66</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Coerce options to a JSON Schema.</p>
+								</div>
+								<p>This function only does coercions that Ajv does not.</p>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>value: <span class="tsd-signature-type">any</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The value to coerce</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> schema: <span class="tsd-signature-type">JSONSchema7</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The schema to coerce to</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">object</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-has-type-parameter">
+					<a name="collectconfig" class="tsd-anchor"></a>
+					<h3>collect<wbr>Config</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-has-type-parameter">
+						<li class="tsd-signature tsd-kind-icon">collect<wbr>Config&lt;ConfigType&gt;<span class="tsd-signature-symbol">(</span>appName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, schema<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>args<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">; </span>config<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ConfigType</span><span class="tsd-signature-symbol">; </span>log<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Logger</span><span class="tsd-signature-symbol">; </span>options<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{}</span><span class="tsd-signature-symbol">; </span>valid<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> }</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/stencila/configa/blob/28884de/src/run-collect.ts#L28">run-collect.ts:28</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Collect configuration options.</p>
+								</div>
+							</div>
+							<h4 class="tsd-type-parameters-title">Type parameters</h4>
+							<ul class="tsd-type-parameters">
+								<li>
+									<h4>ConfigType<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span></h4>
+								</li>
+							</ul>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>appName: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The name of the application to collect configuration options for.</p>
+									</div>
+								</li>
+								<li>
+									<h5>schema: <span class="tsd-signature-type">object</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-symbol">{ </span>args<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">; </span>config<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ConfigType</span><span class="tsd-signature-symbol">; </span>log<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Logger</span><span class="tsd-signature-symbol">; </span>options<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{}</span><span class="tsd-signature-symbol">; </span>valid<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> }</span></h4>
+							<ul class="tsd-parameters">
+								<li class="tsd-parameter">
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> args<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+								<li class="tsd-parameter">
+									<h5>config<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ConfigType</span></h5>
+								</li>
+								<li class="tsd-parameter">
+									<h5>log<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Logger</span></h5>
+								</li>
+								<li class="tsd-parameter">
+									<h5>options<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{}</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter-index-signature">
+											<h5><span class="tsd-signature-symbol">[</span>key: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">]: </span><span class="tsd-signature-type">any</span></h5>
+										</li>
+									</ul>
+								</li>
+								<li class="tsd-parameter">
+									<h5>valid<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></h5>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function">
+					<a name="contains" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> contains</h3>
+					<ul class="tsd-signatures tsd-kind-function">
+						<li class="tsd-signature tsd-kind-icon">contains<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">PropertyDecorator</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/stencila/configa/blob/28884de/src/define.ts#L176">define.ts:176</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>An array instance is valid against &quot;contains&quot; if at least one of its
+										elements is valid against the given schema. Note that when collecting
+										annotations, the subschema MUST be applied to every array element even
+										after the first match has been found. This is to ensure that all
+									possible annotations are collected.</p>
+								</div>
+								<p>Used in conjunction with <a href="globals.html#mincontains">minContains</a> and/or <a href="globals.html#maxcontains">maxContains</a>.</p>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>value: <span class="tsd-signature-type">object</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>A valid JSON Schema.</p>
+										</div>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">PropertyDecorator</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function">
+					<a name="dependentrequired" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> dependent<wbr>Required</h3>
+					<ul class="tsd-signatures tsd-kind-function">
+						<li class="tsd-signature tsd-kind-icon">dependent<wbr>Required<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{}</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">PropertyDecorator</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/stencila/configa/blob/28884de/src/define.ts#L260">define.ts:260</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>This keyword specifies properties that are required if a specific
+										other property is present.  Their requirement is dependent on the
+									presence of the other property.</p>
+								</div>
+								<p>Validation succeeds if, for each name that appears in both the
+									instance and as a name within this keyword&#39;s value, every item in the
+								corresponding array is also the name of a property in the instance.</p>
+								<p>Omitting this keyword has the same behavior as an empty object.</p>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>value: <span class="tsd-signature-symbol">{}</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>An object.  Properties in this
+												object, if any, MUST be arrays.  Elements in each array, if any, MUST
+											be strings, and MUST be unique.</p>
+										</div>
+									</div>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter-index-signature">
+											<h5><span class="tsd-signature-symbol">[</span>key: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">]: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h5>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">PropertyDecorator</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function">
+					<a name="enumeration" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> enumeration</h3>
+					<ul class="tsd-signatures tsd-kind-function">
+						<li class="tsd-signature tsd-kind-icon">enumeration<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">PropertyDecorator</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/stencila/configa/blob/28884de/src/define.ts#L43">define.ts:43</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>An instance validates successfully against this keyword if its value
+									is equal to one of the elements in this keyword&#39;s array value.</p>
+								</div>
+								<p>Elements in the array might be of any type, including null.</p>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>value: <span class="tsd-signature-type">unknown</span><span class="tsd-signature-symbol">[]</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>An array.  This array SHOULD have
+											at least one element.  Elements in the array SHOULD be unique.</p>
+										</div>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">PropertyDecorator</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function">
+					<a name="exclusivemaximum" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> exclusive<wbr>Maximum</h3>
+					<ul class="tsd-signatures tsd-kind-function">
+						<li class="tsd-signature tsd-kind-icon">exclusive<wbr>Maximum<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">PropertyDecorator</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/stencila/configa/blob/28884de/src/define.ts#L74">define.ts:74</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>If the instance is a number, then the instance is valid only if it
+									has a value strictly less than (not equal to) &quot;exclusiveMaximum&quot;.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>value: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>A number, representing an
+											exclusive upper limit for a numeric instance.</p>
+										</div>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">PropertyDecorator</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function">
+					<a name="exclusiveminimum" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> exclusive<wbr>Minimum</h3>
+					<ul class="tsd-signatures tsd-kind-function">
+						<li class="tsd-signature tsd-kind-icon">exclusive<wbr>Minimum<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">PropertyDecorator</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/stencila/configa/blob/28884de/src/define.ts#L93">define.ts:93</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>If the instance is a number, then the instance is valid only if it
+									has a value strictly greater than (not equal to) &quot;exclusiveMinimum&quot;.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>value: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>A number, representing an
+											exclusive lower limit for a numeric instance.</p>
+										</div>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">PropertyDecorator</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function">
+					<a name="generatejsonsample" class="tsd-anchor"></a>
+					<h3>generate<wbr>Json<wbr>Sample</h3>
+					<ul class="tsd-signatures tsd-kind-function">
+						<li class="tsd-signature tsd-kind-icon">generate<wbr>Json<wbr>Sample<span class="tsd-signature-symbol">(</span>options<span class="tsd-signature-symbol">: </span><a href="interfaces/option.html" class="tsd-signature-type">Option</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/stencila/configa/blob/28884de/src/develop-samples.ts#L16">develop-samples.ts:16</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Generate a sample configuration in JSON with description comments
+									and default values.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>options: <a href="interfaces/option.html" class="tsd-signature-type">Option</a><span class="tsd-signature-symbol">[]</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The configuration options to generate the sample for</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function">
+					<a name="generatejsonschema" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> generate<wbr>Json<wbr>Schema</h3>
+					<ul class="tsd-signatures tsd-kind-function">
+						<li class="tsd-signature tsd-kind-icon">generate<wbr>Json<wbr>Schema<span class="tsd-signature-symbol">(</span>app<span class="tsd-signature-symbol">: </span><a href="interfaces/application.html" class="tsd-signature-type">Application</a>, pkg<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/stencila/configa/blob/28884de/src/develop-schema.ts#L168">develop-schema.ts:168</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Generate a JSON Schema document for an application.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>app: <a href="interfaces/application.html" class="tsd-signature-type">Application</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>The application to generate the schema for</p>
+										</div>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> pkg: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">object</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function">
+					<a name="generatejsonschemadefinition" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> generate<wbr>Json<wbr>Schema<wbr>Definition</h3>
+					<ul class="tsd-signatures tsd-kind-function">
+						<li class="tsd-signature tsd-kind-icon">generate<wbr>Json<wbr>Schema<wbr>Definition<span class="tsd-signature-symbol">(</span>app<span class="tsd-signature-symbol">: </span><a href="interfaces/application.html" class="tsd-signature-type">Application</a>, pkg<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">JSONSchema7</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/stencila/configa/blob/28884de/src/develop-schema.ts#L110">develop-schema.ts:110</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Generate a JSON Schema definition for an application.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>app: <a href="interfaces/application.html" class="tsd-signature-type">Application</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>The application to generate the schema for</p>
+										</div>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> pkg: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">object</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">JSONSchema7</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function">
+					<a name="generatemddetails" class="tsd-anchor"></a>
+					<h3>generate<wbr>MdDetails</h3>
+					<ul class="tsd-signatures tsd-kind-function">
+						<li class="tsd-signature tsd-kind-icon">generate<wbr>MdDetails<span class="tsd-signature-symbol">(</span>options<span class="tsd-signature-symbol">: </span><a href="interfaces/option.html" class="tsd-signature-type">Option</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/stencila/configa/blob/28884de/src/develop-md.ts#L101">develop-md.ts:101</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Generate a Markdown ordered list of details across
+									a set of options.</p>
+								</div>
+								<p>Includes anchors so that each detail can be linked to
+									from elsewhere. If an option has no details then it
+								will not be in the list.</p>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>options: <a href="interfaces/option.html" class="tsd-signature-type">Option</a><span class="tsd-signature-symbol">[]</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The options to generate the list for</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function">
+					<a name="generatemdtable" class="tsd-anchor"></a>
+					<h3>generate<wbr>MdTable</h3>
+					<ul class="tsd-signatures tsd-kind-function">
+						<li class="tsd-signature tsd-kind-icon">generate<wbr>MdTable<span class="tsd-signature-symbol">(</span>options<span class="tsd-signature-symbol">: </span><a href="interfaces/option.html" class="tsd-signature-type">Option</a><span class="tsd-signature-symbol">[]</span>, addDetails<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/stencila/configa/blob/28884de/src/develop-md.ts#L34">develop-md.ts:34</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Generate a Markdown table for a set of options</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>options: <a href="interfaces/option.html" class="tsd-signature-type">Option</a><span class="tsd-signature-symbol">[]</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The options to generate the table for</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> addDetails: <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = true</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>Should option details be added after the table?</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function">
+					<a name="generatemdusage" class="tsd-anchor"></a>
+					<h3>generate<wbr>MdUsage</h3>
+					<ul class="tsd-signatures tsd-kind-function">
+						<li class="tsd-signature tsd-kind-icon">generate<wbr>MdUsage<span class="tsd-signature-symbol">(</span>appName<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span>, optionName<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span>, optionValue<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/stencila/configa/blob/28884de/src/develop-md.ts#L14">develop-md.ts:14</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Generate a Markdown usage guide</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> appName: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;&lt;app&gt;&quot;</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> optionName: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;&lt;option&gt;&quot;</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> optionValue: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;&lt;value&gt;&quot;</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function">
+					<a name="helpforoption" class="tsd-anchor"></a>
+					<h3>help<wbr>For<wbr>Option</h3>
+					<ul class="tsd-signatures tsd-kind-function">
+						<li class="tsd-signature tsd-kind-icon">help<wbr>For<wbr>Option<span class="tsd-signature-symbol">(</span>schema<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span>, option<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/stencila/configa/blob/28884de/src/run-help.ts#L48">run-help.ts:48</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>schema: <span class="tsd-signature-type">object</span></h5>
+								</li>
+								<li>
+									<h5>option: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function">
+					<a name="helplistoptions" class="tsd-anchor"></a>
+					<h3>help<wbr>List<wbr>Options</h3>
+					<ul class="tsd-signatures tsd-kind-function">
+						<li class="tsd-signature tsd-kind-icon">help<wbr>List<wbr>Options<span class="tsd-signature-symbol">(</span>schema<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/stencila/configa/blob/28884de/src/run-help.ts#L22">run-help.ts:22</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>schema: <span class="tsd-signature-type">object</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function">
+					<a name="helpusage" class="tsd-anchor"></a>
+					<h3>help<wbr>Usage</h3>
+					<ul class="tsd-signatures tsd-kind-function">
+						<li class="tsd-signature tsd-kind-icon">help<wbr>Usage<span class="tsd-signature-symbol">(</span>schema<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span>, option<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/stencila/configa/blob/28884de/src/run-help.ts#L12">run-help.ts:12</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>schema: <span class="tsd-signature-type">object</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> option: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function">
+					<a name="insertmd" class="tsd-anchor"></a>
+					<h3>insert<wbr>Md</h3>
+					<ul class="tsd-signatures tsd-kind-function">
+						<li class="tsd-signature tsd-kind-icon">insert<wbr>Md<span class="tsd-signature-symbol">(</span>doc<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, content<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{}</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/stencila/configa/blob/28884de/src/develop-md.ts#L124">develop-md.ts:124</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Insert Markdown into a Markdown string.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>doc: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The Markdown string to insert in to</p>
+									</div>
+								</li>
+								<li>
+									<h5>content: <span class="tsd-signature-symbol">{}</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The Markdown content to insert as a map of tags to content e.g. <code>{TABLE: &#39;...&#39;}</code></p>
+									</div>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter-index-signature">
+											<h5><span class="tsd-signature-symbol">[</span>key: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">]: </span><span class="tsd-signature-type">string</span></h5>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function">
+					<a name="insertmdintofile" class="tsd-anchor"></a>
+					<h3>insert<wbr>MdInto<wbr>File</h3>
+					<ul class="tsd-signatures tsd-kind-function">
+						<li class="tsd-signature tsd-kind-icon">insert<wbr>MdInto<wbr>File<span class="tsd-signature-symbol">(</span>filePath<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, content<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{}</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/stencila/configa/blob/28884de/src/develop-md.ts#L146">develop-md.ts:146</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Insert Markdown into a Markdown file.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>filePath: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5>content: <span class="tsd-signature-symbol">{}</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter-index-signature">
+											<h5><span class="tsd-signature-symbol">[</span>key: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">]: </span><span class="tsd-signature-type">string</span></h5>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function">
+					<a name="maxcontains" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> max<wbr>Contains</h3>
+					<ul class="tsd-signatures tsd-kind-function">
+						<li class="tsd-signature tsd-kind-icon">max<wbr>Contains<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">PropertyDecorator</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/stencila/configa/blob/28884de/src/define.ts#L188">define.ts:188</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>An array instance is valid against &quot;maxContains&quot; if the number of
+										elements that are valid against the schema for &quot;contains&quot;
+									[json-schema] is less than, or equal to, the value of this keyword.</p>
+								</div>
+								<p>If &quot;contains&quot; is not present within the same schema object, then this
+								keyword has no effect.</p>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>value: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>A non-negative integer.</p>
+										</div>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">PropertyDecorator</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function">
+					<a name="maxitems" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> max<wbr>Items</h3>
+					<ul class="tsd-signatures tsd-kind-function">
+						<li class="tsd-signature tsd-kind-icon">max<wbr>Items<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">PropertyDecorator</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/stencila/configa/blob/28884de/src/define.ts#L141">define.ts:141</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>An array instance is valid against &quot;maxItems&quot; if its size is less
+									than, or equal to, the value of this keyword.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>value: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>A non-negative integer.</p>
+										</div>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">PropertyDecorator</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function">
+					<a name="maxlength" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> max<wbr>Length</h3>
+					<ul class="tsd-signatures tsd-kind-function">
+						<li class="tsd-signature tsd-kind-icon">max<wbr>Length<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">PropertyDecorator</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/stencila/configa/blob/28884de/src/define.ts#L107">define.ts:107</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>A string instance is valid against this keyword if its length is less
+									than, or equal to, the value of this keyword.</p>
+								</div>
+								<p>The length of a string instance is defined as the number of its
+								characters as defined by RFC 8259 [RFC8259].</p>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>value: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>A non-negative integer.</p>
+										</div>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">PropertyDecorator</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function">
+					<a name="maxproperties" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> max<wbr>Properties</h3>
+					<ul class="tsd-signatures tsd-kind-function">
+						<li class="tsd-signature tsd-kind-icon">max<wbr>Properties<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">PropertyDecorator</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/stencila/configa/blob/28884de/src/define.ts#L219">define.ts:219</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>An object instance is valid against &quot;maxProperties&quot; if its number of
+									properties is less than, or equal to, the value of this keyword.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>value: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>A non-negative integer.</p>
+										</div>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">PropertyDecorator</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function">
+					<a name="maximum" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> maximum</h3>
+					<ul class="tsd-signatures tsd-kind-function">
+						<li class="tsd-signature tsd-kind-icon">maximum<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">PropertyDecorator</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/stencila/configa/blob/28884de/src/define.ts#L65">define.ts:65</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>If the instance is a number, then this keyword validates only if the
+									instance is less than or exactly equal to &quot;maximum&quot;.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>value: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>A number, representing an inclusive
+											upper limit for a numeric instance.</p>
+										</div>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">PropertyDecorator</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function">
+					<a name="mincontains" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> min<wbr>Contains</h3>
+					<ul class="tsd-signatures tsd-kind-function">
+						<li class="tsd-signature tsd-kind-icon">min<wbr>Contains<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">PropertyDecorator</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/stencila/configa/blob/28884de/src/define.ts#L208">define.ts:208</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>An array instance is valid against &quot;minContains&quot; if the number of
+										elements that are valid against the schema for &quot;contains&quot;
+										[json-schema] is greater than, or equal to, the value of this
+									keyword.</p>
+								</div>
+								<p>A value of 0 is allowed, but is only useful for setting a range of
+									occurrences from 0 to the value of &quot;maxContains&quot;.  A value of 0 with
+								no &quot;maxContains&quot; causes &quot;contains&quot; to always pass validation.</p>
+								<p>If &quot;contains&quot; is not present within the same schema object, then this
+								keyword has no effect.</p>
+								<p>Omitting this keyword has the same behavior as a value of 1.</p>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>value: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>A non-negative integer.</p>
+										</div>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">PropertyDecorator</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function">
+					<a name="minitems" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> min<wbr>Items</h3>
+					<ul class="tsd-signatures tsd-kind-function">
+						<li class="tsd-signature tsd-kind-icon">min<wbr>Items<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">PropertyDecorator</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/stencila/configa/blob/28884de/src/define.ts#L151">define.ts:151</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>An array instance is valid against &quot;minItems&quot; if its size is greater
+									than, or equal to, the value of this keyword.</p>
+								</div>
+								<p>Omitting this keyword has the same behavior as a value of 0.</p>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>value: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>A non-negative integer.</p>
+										</div>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">PropertyDecorator</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function">
+					<a name="minlength" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> min<wbr>Length</h3>
+					<ul class="tsd-signatures tsd-kind-function">
+						<li class="tsd-signature tsd-kind-icon">min<wbr>Length<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">PropertyDecorator</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/stencila/configa/blob/28884de/src/define.ts#L120">define.ts:120</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>A string instance is valid against this keyword if its length is
+									greater than, or equal to, the value of this keyword.</p>
+								</div>
+								<p>The length of a string instance is defined as the number of its
+								characters as defined by RFC 8259 [RFC8259].</p>
+								<p>Omitting this keyword has the same behavior as a value of 0.</p>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>value: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>A non-negative integer.</p>
+										</div>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">PropertyDecorator</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function">
+					<a name="minproperties" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> min<wbr>Properties</h3>
+					<ul class="tsd-signatures tsd-kind-function">
+						<li class="tsd-signature tsd-kind-icon">min<wbr>Properties<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">PropertyDecorator</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/stencila/configa/blob/28884de/src/define.ts#L230">define.ts:230</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>An object instance is valid against &quot;minProperties&quot; if its number of
+									properties is greater than, or equal to, the value of this keyword.</p>
+								</div>
+								<p>Omitting this keyword has the same behavior as a value of 0.</p>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>value: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>A non-negative integer.</p>
+										</div>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">PropertyDecorator</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function">
+					<a name="minimum" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> minimum</h3>
+					<ul class="tsd-signatures tsd-kind-function">
+						<li class="tsd-signature tsd-kind-icon">minimum<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">PropertyDecorator</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/stencila/configa/blob/28884de/src/define.ts#L84">define.ts:84</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>If the instance is a number, then this keyword validates only if the
+									instance is greater than or exactly equal to &quot;minimum&quot;.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>value: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>A number, representing an inclusive
+											lower limit for a numeric instance.</p>
+										</div>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">PropertyDecorator</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function">
+					<a name="multipleof" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> multiple<wbr>Of</h3>
+					<ul class="tsd-signatures tsd-kind-function">
+						<li class="tsd-signature tsd-kind-icon">multiple<wbr>Of<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">PropertyDecorator</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/stencila/configa/blob/28884de/src/define.ts#L54">define.ts:54</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>A numeric instance is valid only if division by this keyword&#39;s value
+									results in an integer.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>value: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>A number, strictly greater than 0.</p>
+										</div>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">PropertyDecorator</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function">
+					<a name="parseconfig" class="tsd-anchor"></a>
+					<h3>parse<wbr>Config</h3>
+					<ul class="tsd-signatures tsd-kind-function">
+						<li class="tsd-signature tsd-kind-icon">parse<wbr>Config<span class="tsd-signature-symbol">(</span>filePath<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="interfaces/application.html" class="tsd-signature-type">Application</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/stencila/configa/blob/28884de/src/develop-parse.ts#L19">develop-parse.ts:19</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Parse a Typescript configuration file.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>filePath: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The path the to file</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="interfaces/application.html" class="tsd-signature-type">Application</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></h4>
+							<p>An array of configuration options</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function">
+					<a name="parsedecorator" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> parse<wbr>Decorator</h3>
+					<ul class="tsd-signatures tsd-kind-function">
+						<li class="tsd-signature tsd-kind-icon">parse<wbr>Decorator<span class="tsd-signature-symbol">(</span>option<span class="tsd-signature-symbol">: </span><a href="interfaces/option.html" class="tsd-signature-type">Option</a>, decorator<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Decorator</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="interfaces/validator.html" class="tsd-signature-type">Validator</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/stencila/configa/blob/28884de/src/develop-parse.ts#L178">develop-parse.ts:178</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Convert a property decorator to a validator.</p>
+								</div>
+								<p>Checks that the validation keyword is valid for the
+								type of the option</p>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>option: <a href="interfaces/option.html" class="tsd-signature-type">Option</a></h5>
+								</li>
+								<li>
+									<h5>decorator: <span class="tsd-signature-type">Decorator</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>The TypeDoc decorator to parse</p>
+										</div>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="interfaces/validator.html" class="tsd-signature-type">Validator</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function">
+					<a name="pattern" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> pattern</h3>
+					<ul class="tsd-signatures tsd-kind-function">
+						<li class="tsd-signature tsd-kind-icon">pattern<span class="tsd-signature-symbol">(</span>regexp<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">RegExp</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">PropertyDecorator</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/stencila/configa/blob/28884de/src/define.ts#L131">define.ts:131</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>A string instance is considered valid if the regular expression
+										matches the instance successfully.  Recall: regular expressions are
+									not implicitly anchored.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>regexp: <span class="tsd-signature-type">RegExp</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">PropertyDecorator</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function">
+					<a name="propertydecorator" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> property<wbr>Decorator</h3>
+					<ul class="tsd-signatures tsd-kind-function">
+						<li class="tsd-signature tsd-kind-icon">property<wbr>Decorator<span class="tsd-signature-symbol">(</span>target<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Record</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span>, propertyKey<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">symbol</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/stencila/configa/blob/28884de/src/define.ts#L25">define.ts:25</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<dl class="tsd-comment-tags">
+									<dt>module</dt>
+									<dd><p>define</p>
+										<p>Module with functions needed for defining configurations. This module
+										will usually be imported directly into <code>config.ts</code> files e.g.</p>
+										<pre><code class="language-ts"><span class="hljs-keyword">import</span> {minimum, maximum} <span class="hljs-keyword">from</span> <span class="hljs-string">'@stencila/configa/define'</span></code></pre>
+										<p>The following list of validators and their documentation is
+											copied directly from the JSON Schema v2019-09 specification at
+										<a href="https://datatracker.ietf.org/doc/draft-handrews-json-schema-validation">https://datatracker.ietf.org/doc/draft-handrews-json-schema-validation</a>.</p>
+										<p>The only validators from there that are excluded are:</p>
+										<ul>
+											<li><code>type</code>, since that is implicit in the Typescript definition of a option</li>
+											<li><code>const</code>, since having a constant option is sorta pointless</li>
+										</ul>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>target: <span class="tsd-signature-type">Record</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></h5>
+								</li>
+								<li>
+									<h5>propertyKey: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">symbol</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function">
+					<a name="required" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> required</h3>
+					<ul class="tsd-signatures tsd-kind-function">
+						<li class="tsd-signature tsd-kind-icon">required<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">PropertyDecorator</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/stencila/configa/blob/28884de/src/define.ts#L242">define.ts:242</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>An object instance is valid against this keyword if every item in the
+									array is the name of a property in the instance.</p>
+								</div>
+								<p>Omitting this keyword has the same behavior as an empty array.</p>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>value: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>An array.  Elements of this array,
+											if any, MUST be strings, and MUST be unique.</p>
+										</div>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">PropertyDecorator</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function">
+					<a name="typetojsonschema" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> type<wbr>ToJson<wbr>Schema</h3>
+					<ul class="tsd-signatures tsd-kind-function">
+						<li class="tsd-signature tsd-kind-icon">type<wbr>ToJson<wbr>Schema<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, validators<span class="tsd-signature-symbol">: </span><a href="interfaces/validator.html" class="tsd-signature-type">Validator</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">JSONSchema7</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/stencila/configa/blob/28884de/src/develop-schema.ts#L74">develop-schema.ts:74</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Convert a Typescript type and associated validators to a JSON Schema</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>type: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>The Typescript type name</p>
+										</div>
+									</div>
+								</li>
+								<li>
+									<h5>validators: <a href="interfaces/validator.html" class="tsd-signature-type">Validator</a><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">JSONSchema7</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function">
+					<a name="uniqueitems" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> unique<wbr>Items</h3>
+					<ul class="tsd-signatures tsd-kind-function">
+						<li class="tsd-signature tsd-kind-icon">unique<wbr>Items<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">PropertyDecorator</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/stencila/configa/blob/28884de/src/define.ts#L162">define.ts:162</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>If this keyword has boolean value false, the instance validates
+										successfully.  If it has boolean value true, the instance validates
+									successfully if all of its elements are unique.</p>
+								</div>
+								<p>Omitting this keyword has the same behavior as a value of false.</p>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> value: <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> = true</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>A boolean.</p>
+										</div>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">PropertyDecorator</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function">
+					<a name="updatejsonschema" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> update<wbr>Json<wbr>Schema</h3>
+					<ul class="tsd-signatures tsd-kind-function">
+						<li class="tsd-signature tsd-kind-icon">update<wbr>Json<wbr>Schema<span class="tsd-signature-symbol">(</span>filePath<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, app<span class="tsd-signature-symbol">: </span><a href="interfaces/application.html" class="tsd-signature-type">Application</a>, pkg<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/stencila/configa/blob/28884de/src/develop-schema.ts#L176">develop-schema.ts:176</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Update a JSON Schema file for an application.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>filePath: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5>app: <a href="interfaces/application.html" class="tsd-signature-type">Application</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>The application to generate the schema for</p>
+										</div>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> pkg: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">object</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function">
+					<a name="updatereadme" class="tsd-anchor"></a>
+					<h3>update<wbr>Readme</h3>
+					<ul class="tsd-signatures tsd-kind-function">
+						<li class="tsd-signature tsd-kind-icon">update<wbr>Readme<span class="tsd-signature-symbol">(</span>filePath<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, appName<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, options<span class="tsd-signature-symbol">: </span><a href="interfaces/option.html" class="tsd-signature-type">Option</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/stencila/configa/blob/28884de/src/develop-md.ts#L160">develop-md.ts:160</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Insert Markdown into a <code>README.md</code> file.</p>
+								</div>
+								<p>Inserts the all possible generated Markdown sections,
+								but only if corresponding tags exist.</p>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>filePath: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5>appName: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5>options: <a href="interfaces/option.html" class="tsd-signature-type">Option</a><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function">
+					<a name="validatedefault" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> validate<wbr>Default</h3>
+					<ul class="tsd-signatures tsd-kind-function">
+						<li class="tsd-signature tsd-kind-icon">validate<wbr>Default<span class="tsd-signature-symbol">(</span>option<span class="tsd-signature-symbol">: </span><a href="interfaces/option.html" class="tsd-signature-type">Option</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/stencila/configa/blob/28884de/src/develop-schema.ts#L188">develop-schema.ts:188</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Check that the default value for an option is valid
+									against any validators it may have.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>option: <a href="interfaces/option.html" class="tsd-signature-type">Option</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>The option to validate</p>
+										</div>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function">
+					<a name="validateoptions" class="tsd-anchor"></a>
+					<h3>validate<wbr>Options</h3>
+					<ul class="tsd-signatures tsd-kind-function">
+						<li class="tsd-signature tsd-kind-icon">validate<wbr>Options<span class="tsd-signature-symbol">(</span>options<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span>, schema<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">JSONSchema7</span>, log<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Logger</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">]</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/stencila/configa/blob/28884de/src/run-collect.ts#L91">run-collect.ts:91</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Validate (and coerce where necessary) options against a JSON Schema</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>options: <span class="tsd-signature-type">object</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The options to validate</p>
+									</div>
+								</li>
+								<li>
+									<h5>schema: <span class="tsd-signature-type">JSONSchema7</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>The schema to validate against</p>
+									</div>
+								</li>
+								<li>
+									<h5>log: <span class="tsd-signature-type">Logger</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>A logger to emit messages to</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">]</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function">
+					<a name="validatortojsonschema" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> validator<wbr>ToJson<wbr>Schema</h3>
+					<ul class="tsd-signatures tsd-kind-function">
+						<li class="tsd-signature tsd-kind-icon">validator<wbr>ToJson<wbr>Schema<span class="tsd-signature-symbol">(</span>validator<span class="tsd-signature-symbol">: </span><a href="interfaces/validator.html" class="tsd-signature-type">Validator</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">JSONSchema7</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/stencila/configa/blob/28884de/src/develop-schema.ts#L20">develop-schema.ts:20</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Convert a validator to a JSON Schema object.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>validator: <a href="interfaces/validator.html" class="tsd-signature-type">Validator</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>The <code>Validator</code> to convert</p>
+										</div>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">JSONSchema7</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function">
+					<a name="validatorsfortype" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> validators<wbr>For<wbr>Type</h3>
+					<ul class="tsd-signatures tsd-kind-function">
+						<li class="tsd-signature tsd-kind-icon">validators<wbr>For<wbr>Type<span class="tsd-signature-symbol">(</span>validators<span class="tsd-signature-symbol">: </span><a href="interfaces/validator.html" class="tsd-signature-type">Validator</a><span class="tsd-signature-symbol">[]</span>, type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/stencila/configa/blob/28884de/src/develop-schema.ts#L35">develop-schema.ts:35</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Filter those validators that apply to a particular type</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>validators: <a href="interfaces/validator.html" class="tsd-signature-type">Validator</a><span class="tsd-signature-symbol">[]</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>The validators to filter</p>
+										</div>
+									</div>
+								</li>
+								<li>
+									<h5>type: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>The type to filter for</p>
+										</div>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">object</span></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class="globals current ">
+						<a href="globals.html"><em>Globals</em></a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+					<li class=" tsd-kind-class">
+						<a href="classes/config.html" class="tsd-kind-icon">Config</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/application.html" class="tsd-kind-icon">Application</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/option.html" class="tsd-kind-icon">Option</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/validator.html" class="tsd-kind-icon">Validator</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#ajv" class="tsd-kind-icon">ajv</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#log" class="tsd-kind-icon">log</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#coerceoptions" class="tsd-kind-icon">coerce<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-function tsd-has-type-parameter">
+						<a href="globals.html#collectconfig" class="tsd-kind-icon">collect<wbr>Config</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#contains" class="tsd-kind-icon">contains</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#dependentrequired" class="tsd-kind-icon">dependent<wbr>Required</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#enumeration" class="tsd-kind-icon">enumeration</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#exclusivemaximum" class="tsd-kind-icon">exclusive<wbr>Maximum</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#exclusiveminimum" class="tsd-kind-icon">exclusive<wbr>Minimum</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#generatejsonsample" class="tsd-kind-icon">generate<wbr>Json<wbr>Sample</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#generatejsonschema" class="tsd-kind-icon">generate<wbr>Json<wbr>Schema</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#generatejsonschemadefinition" class="tsd-kind-icon">generate<wbr>Json<wbr>Schema<wbr>Definition</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#generatemddetails" class="tsd-kind-icon">generate<wbr>MdDetails</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#generatemdtable" class="tsd-kind-icon">generate<wbr>MdTable</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#generatemdusage" class="tsd-kind-icon">generate<wbr>MdUsage</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#helpforoption" class="tsd-kind-icon">help<wbr>For<wbr>Option</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#helplistoptions" class="tsd-kind-icon">help<wbr>List<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#helpusage" class="tsd-kind-icon">help<wbr>Usage</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#insertmd" class="tsd-kind-icon">insert<wbr>Md</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#insertmdintofile" class="tsd-kind-icon">insert<wbr>MdInto<wbr>File</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#maxcontains" class="tsd-kind-icon">max<wbr>Contains</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#maxitems" class="tsd-kind-icon">max<wbr>Items</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#maxlength" class="tsd-kind-icon">max<wbr>Length</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#maxproperties" class="tsd-kind-icon">max<wbr>Properties</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#maximum" class="tsd-kind-icon">maximum</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#mincontains" class="tsd-kind-icon">min<wbr>Contains</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#minitems" class="tsd-kind-icon">min<wbr>Items</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#minlength" class="tsd-kind-icon">min<wbr>Length</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#minproperties" class="tsd-kind-icon">min<wbr>Properties</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#minimum" class="tsd-kind-icon">minimum</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#multipleof" class="tsd-kind-icon">multiple<wbr>Of</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#parseconfig" class="tsd-kind-icon">parse<wbr>Config</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#parsedecorator" class="tsd-kind-icon">parse<wbr>Decorator</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#pattern" class="tsd-kind-icon">pattern</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#propertydecorator" class="tsd-kind-icon">property<wbr>Decorator</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#required" class="tsd-kind-icon">required</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#typetojsonschema" class="tsd-kind-icon">type<wbr>ToJson<wbr>Schema</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#uniqueitems" class="tsd-kind-icon">unique<wbr>Items</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#updatejsonschema" class="tsd-kind-icon">update<wbr>Json<wbr>Schema</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#updatereadme" class="tsd-kind-icon">update<wbr>Readme</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#validatedefault" class="tsd-kind-icon">validate<wbr>Default</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#validateoptions" class="tsd-kind-icon">validate<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#validatortojsonschema" class="tsd-kind-icon">validator<wbr>ToJson<wbr>Schema</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#validatorsfortype" class="tsd-kind-icon">validators<wbr>For<wbr>Type</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="assets/js/main.js"></script>
+<script>if (location.protocol == 'file:') document.write('<script src="assets/js/search.js"><' + '/script>');</script>
+</body>
+</html>
