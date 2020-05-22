@@ -1,3 +1,13 @@
+## [0.4.8](https://github.com/stencila/configa/compare/v0.4.7...v0.4.8) (2020-05-22)
+
+
+### Bug Fixes
+
+* **dependencies:** update dependency @stencila/logga to ^2.2.0 ([36d4286](https://github.com/stencila/configa/commit/36d4286a987a77fe4be10ace15e8bc9c5fc5e519))
+* **dependencies:** update dependency ajv to ^6.12.2 ([339c987](https://github.com/stencila/configa/commit/339c987b2df9963cc2406f2cb630749617caac9f))
+* **dependencies:** update dependency chalk to v4 ([e94a46a](https://github.com/stencila/configa/commit/e94a46ae504ed60d383523d3ff609393b2cb271f))
+* **dependencies:** update dependency typedoc to ^0.17.7 ([ecadb33](https://github.com/stencila/configa/commit/ecadb33f797ad146ba1d628b5e54a81eb5126666))
+
 ## [0.4.7](https://github.com/stencila/configa/compare/v0.4.6...v0.4.7) (2020-03-23)
 
 
