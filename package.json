@@ -48,7 +48,7 @@
     "typescript": "3.9.2"
   },
   "dependencies": {
-    "@stencila/logga": "^2.2.0",
+    "@stencila/logga": "^4.0.0",
     "ajv": "^6.12.2",
     "chalk": "^4.0.0",
     "globby": "^11.0.0",
