@@ -2,15 +2,25 @@
 
 **Application configuration: DRY, flexible and type-safe. Pick any three.**
 
+<br>
+
 ## ⚠️ Deprecated
 
-This project is deprecated and no longer maintained. Configa was originally factored out of another project, [Sparkla](https://github.com/stencila/sparkla), and intended to be a library for application configuration using TypeScript and JSON Schema. We envisaged that it would be reused for CLI tools such as [Encoda](https://github.com/stencila/encoda) and [Executa](https://github.com/stencila/executa). However, at the time of writing, we have focussed on developing command line and configuration management interfaces using Rust in the main [Stencila](https://github.com/stencila/stencila) (and keeping TypeScript CLIs very simple). Much of the functionality of Configa is provided by the Rust crates [`structopt`](https://crates.io/crates/structopt) and [`validate`](https://crates.io/crates/validate).
+This project is deprecated and no longer maintained.
+
+Configa was originally factored out of another project, [Sparkla](https://github.com/stencila/sparkla), and intended to be a library for application configuration using TypeScript and JSON Schema. We envisaged that it would be reused for our CLI tools such as [Encoda](https://github.com/stencila/encoda) and [Executa](https://github.com/stencila/executa). 
+
+However, at the time of writing, we have focussed on developing command line and configuration management interfaces using Rust in the main [Stencila](https://github.com/stencila/stencila) repo (and keeping TypeScript CLIs very simple). Much of the functionality of Configa is provided by the Rust crates [`structopt`](https://crates.io/crates/structopt) and [`validate`](https://crates.io/crates/validate). There are probably TypeScript analogues to those if you prefer that as a development environment.
+
+<br>
 
 ## 📦 Install
 
 ```bash
 npm install --save @stencila/configa
 ```
+
+<br>
 
 ## ⚡ Quick start
 
@@ -79,6 +89,8 @@ Then run,
 ```bash
 configa readme
 ```
+
+<br>
 
 ## 🚀 Usage
 
