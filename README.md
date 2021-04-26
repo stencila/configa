@@ -1,20 +1,18 @@
-# Configa
+# 🔧 Configa
 
-> Application configuration: DRY, flexible and type-safe. Pick any three.
+**Application configuration: DRY, flexible and type-safe. Pick any three.**
 
-[![Build status](https://travis-ci.org/stencila/configa.svg?branch=master)](https://travis-ci.org/stencila/configa)
-[![Code coverage](https://codecov.io/gh/stencila/configa/branch/master/graph/badge.svg)](https://codecov.io/gh/stencila/configa)
-[![NPM](https://img.shields.io/npm/v/@stencila/configa.svg?style=flat)](https://www.npmjs.com/package/@stencila/configa)
+## ⚠️ Deprecated
 
-> :warning: Configa is in early development. It's been factored out of [Sparkla](https://github.com/stencila/sparkla), another project in early development, for more general usage.
+This project is deprecated and no longer maintained. Configa was originally factored out of another project, [Sparkla](https://github.com/stencila/sparkla), and intended to be a library for application configuration using TypeScript and JSON Schema. We envisaged that it would be reused for CLI tools such as [Encoda](https://github.com/stencila/encoda) and [Executa](https://github.com/stencila/executa). However, at the time of writing, we have focussed on developing command line and configuration management interfaces using Rust in the main [Stencila](https://github.com/stencila/stencila) (and keeping TypeScript CLIs very simple). Much of the functionality of Configa is provided by the Rust crates [`structopt`](https://crates.io/crates/structopt) and [`validate`](https://crates.io/crates/validate).
 
-## Install
+## 📦 Install
 
 ```bash
 npm install --save @stencila/configa
 ```
 
-## Quick start
+## ⚡ Quick start
 
 ### 1. Define a configuration class
 
@@ -82,7 +80,7 @@ Then run,
 configa readme
 ```
 
-## Usage
+## 🚀 Usage
 
 <!-- prettier-ignore-start -->
 <!-- CONFIGA-USAGE-BEGIN -->
